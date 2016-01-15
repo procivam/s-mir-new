@@ -1,0 +1,1 @@
+# Shveinyi svit alias s-mir.com.ua
