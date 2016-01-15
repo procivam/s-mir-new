@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension>
+	<type>plugin</type>
+	<id>rss</id>
+	<name>RSS каналы</name>
+	<owner>catalog</owner>
+	<multiple>N</multiple>
+	<version>2.0005</version>
+	<system>2.0707</system>
+	<sort>6</sort>
+</extension>

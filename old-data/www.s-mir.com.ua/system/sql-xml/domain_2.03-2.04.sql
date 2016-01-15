@@ -1,0 +1,1 @@
+INSERT INTO `{domain}_options` (`name`,`var`,`value`,`type`) VALUES ('Код своих мета тегов','codemeta','','text');

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension>
+	<type>block</type>
+	<id>shoplite_basket</id>
+	<name>Магазин: Корзина</name>
+	<owner>shoplite</owner>
+	<version>2.0006</version>
+	<system>2.0703</system>
+	<sort>20</sort>
+</extension>

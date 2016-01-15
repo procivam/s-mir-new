@@ -1,0 +1,96 @@
+.jcarousel-skin-tango {	
+z-index:0; 
+	}
+
+.jcarousel-skin-tango .jcarousel-container {
+/*
+    -moz-border-radius: 10px;
+     border: 0px solid #FFFFFF;
+*/
+	position: relative; display: block;
+}
+
+.jcarousel-skin-tango .jcarousel-direction-rtl {
+	direction: rtl;
+}
+
+.jcarousel-skin-tango .jcarousel-container-horizontal {
+/*
+margin-left:2px;
+    padding: 0px 50px 0px 50px;*/
+    width: 945px;
+	
+}
+
+
+
+
+.jcarousel-skin-tango .jcarousel-clip-horizontal {
+    width: 945px;
+    height: 350px;
+	
+}
+
+
+.jcarousel-skin-tango .jcarousel-item {
+    width: 945px;
+    height: 350px;
+		background:none;
+		padding:0;
+}
+
+
+
+
+/**
+ *  Horizontal Buttons
+ */
+.jcarousel-skin-tango .jcarousel-next-horizontal {
+    position: absolute;
+ top:70px; 
+ right:-45px;
+    width: 46px;
+    height: 46px;
+    cursor: pointer;
+    background: transparent url(../img/ar2_1.png) no-repeat 0 0;
+
+}
+
+
+.jcarousel-skin-tango .jcarousel-next-horizontal:hover {
+    background: transparent url(../img/ar2_2.png) no-repeat 0 0;
+}
+
+
+
+.jcarousel-skin-tango .jcarousel-prev-horizontal {
+    position: absolute;
+	top:70px;
+    left: -45px;
+    width: 46px;
+    height: 46px;
+    cursor: pointer;
+    background: transparent url(../img/ar1_1.png) no-repeat 0 0;
+}
+
+
+.jcarousel-skin-tango .jcarousel-prev-horizontal:hover {
+ background: transparent url(../img/ar1_2.png) no-repeat 0 0;
+}
+
+
+
+.jcarousel-control{position:absolute; bottom:30px; left:50px;}
+.jcarousel-control a{ display:block; float: left; margin:0 5px 0 0px;
+    width: 17px;
+    height: 17px;
+    cursor: pointer;
+	z-index:250;
+	text-decoration:none;
+
+    background: transparent  url(../img/cerk2.png) no-repeat 0 0;
+	}
+.jcarousel-control a.active,.jcarousel-control a:hover{background: transparent url(../img/cerk1.png) no-repeat 0 0;}
+.jcarousel-control a span{ visibility:hidden;}	
+
+	

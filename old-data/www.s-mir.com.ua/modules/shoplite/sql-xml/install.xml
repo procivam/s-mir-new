@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension>
+	<type>module</type>
+	<id>shoplite</id>
+	<name>Магазин</name>
+	<version>2.1003</version>
+	<system>2.0707</system>
+	<sort>14</sort>
+</extension>

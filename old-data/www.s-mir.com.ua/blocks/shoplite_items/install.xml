@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension>
+	<type>block</type>
+	<id>shoplite_items</id>
+	<name>Магазин: Список товаров</name>
+	<owner>shoplite</owner>
+	<version>2.0012</version>
+	<system>2.0600</system>
+	<sort>21</sort>
+</extension>

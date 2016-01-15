@@ -1,0 +1,4 @@
+<FilesMatch "\.(flv|fla|zip|rar|doc|docx|xls|xlsx|csv|pdf|avi|mpg|mp3|mp4|wma|wmv)$">
+Allow from all
+</FilesMatch>
+Deny from all

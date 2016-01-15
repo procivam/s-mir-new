@@ -1,0 +1,200 @@
+<?xml version="1.0" encoding="utf-8"?>
+<options>
+	<option>
+		<idgroup>1</idgroup>
+		<name>Количество записей на странице категории</name>
+		<var>crows</var>
+		<value>10</value>
+		<type>int</type>
+	</option>
+	<option>
+		<idgroup>1</idgroup>
+		<name>Количество записей на странице результатов поиска</name>
+		<var>rrows</var>
+		<value>10</value>
+		<type>int</type>
+	</option>
+	<option>
+		<idgroup>1</idgroup>
+		<name>Сортировка записей на страницах</name>
+		<var>sort</var>
+		<value>date DESC</value>
+		<type>select</type>
+		<options>
+			<name>По названию</name>
+			<date_DESC>По дате размещения вверх</date_DESC>
+			<date>По дате размещения вниз</date>
+			<price>По цене вниз</price>
+			<price_DESC>По цене вверх</price_DESC>
+			<vote_DESC>По оценке вверх</vote_DESC>
+			<sort>По заданному порядку</sort>
+		</options>
+	</option>
+	<option>
+		<idgroup>1</idgroup>
+		<name>Свое правило сортировки</name>
+		<var>mysort</var>
+		<type>string</type>
+		<superonly>Y</superonly>
+	</option>
+	<option>
+		<idgroup>1</idgroup>
+		<name>Показывать в категории записи всех подкатегорий</name>
+		<var>childview</var>
+		<type>bool</type>
+	</option>
+	<option>
+		<idgroup>1</idgroup>
+		<name>Валюта</name>
+		<var>valute</var>
+		<value>руб.</value>
+		<type>string</type>
+	</option>
+	<option>
+		<idgroup>2</idgroup>
+		<name>Использовать прикрепленные изображения</name>
+		<var>useimages</var>
+		<value>1</value>
+		<type>bool</type>
+	</option>
+	<option>
+		<idgroup>2</idgroup>
+		<name>Уменьшать при загрузке</name>
+		<var>img_resize</var>
+		<value>1</value>
+		<type>bool</type>
+	</option>
+	<option>
+		<idgroup>2</idgroup>
+		<name>Масштабировать по ширине</name>
+		<var>img_x</var>
+		<value>800</value>
+		<type>int</type>
+	</option>
+	<option>
+		<idgroup>2</idgroup>
+		<name>Масштабировать по высоте</name>
+		<var>img_y</var>
+		<type>int</type>
+	</option>
+	<option>
+		<idgroup>2</idgroup>
+		<name>Использовать прикрепленные файлы</name>
+		<var>usefiles</var>
+		<type>bool</type>
+		<refresh>Y</refresh>
+	</option>
+	<option>
+		<idgroup>3</idgroup>
+		<name>Использовать возможность заказа</name>
+		<var>useorder</var>
+		<type>bool</type>
+		<value>1</value>
+		<refresh>Y</refresh>
+	</option>
+	<option>
+		<idgroup>3</idgroup>
+		<name>Строгий учет количества</name>
+		<var>onlyavailable</var>
+		<type>bool</type>
+	</option>
+	<option>
+		<idgroup>3</idgroup>
+		<name>Уведомление о новом заказе на email</name>
+		<var>email</var>
+		<type>string</type>
+	</option>
+	<option>
+		<idgroup>3</idgroup>
+		<name>Шаблон уведомления о заказе администратору</name>
+		<var>mail_toadmin</var>
+		<value>shoplite_order.tpl</value>
+		<type>mailtpl</type>
+	</option>
+	<option>
+		<idgroup>3</idgroup>
+		<name>Шаблон уведомления о заказе пользователю</name>
+		<var>mail_touser</var>
+		<type>mailtpl</type>
+	</option>
+	<option>
+		<idgroup>4</idgroup>
+		<name>Использовать оценки</name>
+		<var>usevote</var>
+		<type>bool</type>
+		<refresh>Y</refresh>
+	</option>
+	<option>
+		<idgroup>4</idgroup>
+		<name>Использовать комментирование</name>
+		<var>usecomments</var>
+		<type>bool</type>
+		<refresh>Y</refresh>
+	</option>
+	<option>
+		<idgroup>4</idgroup>
+		<name>Премодерация комментариев</name>
+		<var>cactive</var>
+		<type>bool</type>
+	</option>
+	<option>
+		<idgroup>4</idgroup>
+		<name>Уведомление о новом комментарии на email</name>
+		<var>cemail</var>
+		<type>string</type>
+	</option>
+	<option>
+		<idgroup>4</idgroup>
+		<name>Шаблон письма-уведомления</name>
+		<var>commenttpl</var>
+		<value>newcomment.tpl</value>
+		<type>mailtpl</type>
+	</option>
+	<option>
+		<idgroup>5</idgroup>
+		<name>Использовать несколько категорий для товара</name>
+		<var>usecats</var>
+		<type>bool</type>
+		<value>0</value>
+	</option>
+	<option>
+		<idgroup>5</idgroup>
+		<name>Использовать визуальный редактор</name>
+		<var>fckeditor</var>
+		<type>bool</type>
+		<value>1</value>
+	</option>
+	<option>
+		<idgroup>5</idgroup>
+		<name>Использовать теги (тематические метки)</name>
+		<var>usetags</var>
+		<type>bool</type>
+		<refresh>Y</refresh>
+	</option>
+	<option>
+		<idgroup>5</idgroup>
+		<name>Использовать модификаторы цен</name>
+		<var>modprices</var>
+		<type>bool</type>
+	</option>
+	<option>
+		<idgroup>5</idgroup>
+		<name>Автогенерация аннотации</name>
+		<var>autoanons</var>
+		<value>1</value>
+		<type>bool</type>
+	</option>
+	<option>
+		<idgroup>5</idgroup>
+		<name>Длина автоаннотации</name>
+		<var>anonslen</var>
+		<value>350</value>
+		<type>int</type>
+	</option>
+	<option>
+		<idgroup>5</idgroup>
+		<name>Свое правило формирования идентификаторов</name>
+		<var>idrule</var>
+		<type>string</type>
+	</option>
+</options>

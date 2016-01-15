@@ -1,0 +1,99 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-AU">
+<head>
+<title>WEBNAMES.RU</title>
+<meta http-equiv="content-type" content="application/xhtml+xml; charset=windows-1251" />
+<link rel="stylesheet" type="text/css" href="css/html.css" media="screen, projection, tv " />
+<link rel="stylesheet" type="text/css" href="css/layout.css" media="screen, projection, tv" />
+<link rel="stylesheet" type="text/css" href="css/print.css" media="print" />
+</head>
+<body>
+<!-- CONTENT: Holds all site content except for the footer.  This is what causes the footer to stick to the bottom -->
+<div id="content">
+  <!-- HEADER: Holds title, subtitle and header-images -->
+  <div id="header">
+    <div id="title">
+      <h1>WEBNAMES.RU</h1>
+      <h2>Всему своё имя!</h2>
+    </div>
+    <img src="images/bg/balloons.gif" alt="" class="balloons" /> <img src="images/bg/header_left.jpg" alt="" class="left" /> <img src="images/bg/header_right.jpg" alt="" class="right" /> </div>
+  <!-- MAIN MENU: Top horizontal menu of the site.  Use class="here" to turn the current page tab on -->
+  <div id="mainMenu">
+    <ul class="floatRight">
+      <li><a href="/" class="here">Главная</a></li>
+      <li><a href="/dns.html">Поддержка DNS</a></li>
+      <li><a href="/stat.html">Статистика</a></li>
+      <li><a href="/srs.html" class="last">RegtimeSRS</a></li>
+    </ul>
+  </div>
+  <!-- PAGE CONTENT BEGINS: This is where you would define the columns (number, width and alignment) -->
+  <div id="page">
+    <!-- 25 percent width column, aligned to the left -->
+    <div class="width25 floatLeft leftColumn">
+      <h1>Услуги</h1>
+      <ul class="sideMenu">
+        <li class="here"> здесь
+          <ul>
+            <li><a href="http://www.webnames.ru/scrp/service_order.pl?servtype=srv_parking">Парковка</a></li>
+            <li><a href="http://www.webnames.ru/scrp/service_order.pl?servtype=srv_vcard">Визитка</a></li>
+            <li><a href="http://www.webnames.ru/scrp/service_order.pl?servtype=srv_dns_both">DNS хостинг</a></li>
+            <li><a href="http://www.webnames.ru/serv_webfwd.pl">Веб переадресация</a></li>
+          </ul>
+        </li>
+        <li class="here">там
+          <ul>
+            <li><a href="http://www.webnames.ru/scrp/hosting_order_gh.pl">Виртуальный хостинг</a></li>
+            <li><a href="http://www.webnames.ru/scrp/hosting_order_ed.pl">Выделенные серверы</a></li>
+            <li><a href="http://www.webnames.ru/scripts/gomobi.pl">goMobi &mdash; мобильный сайт</a></li>
+            <li><a href="http://www.webnames.ru/serv_ssl.pl">SSL сертификаты</a></li>
+          </ul>
+        </li>
+        <li class="here">везде
+          <ul>
+            <li><a href="http://www.webnames.ru/scripts/check.pl">Регистрация доменов</a></li>
+            <li><a href="http://www.webnames.ru/serv_ssl.pl">Защита WHOIS</a></li>
+            <li><a href="http://www.webnames.ru/serv_privacy.pl">Защита регистрационных данных</a></li>
+            <li><a href="http://www.webnames.ru/serv_certificate.pl">Свидетельство о регистрации домена</a></li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+    <!-- 75 percent width column, aligned to the right -->
+    <div class="width75 floatRight">
+      <!-- Gives the gradient block -->
+      <div class="gradient"> <a name="fluidity"></a>
+        <h1>ООО &laquo;Регтайм&raquo;</h1>
+        <h2>ООО &laquo;Регтайм&raquo; &mdash; российский регистратор доменных имен, работающий на рынке с 2001 г. </h2>
+        <p> Мы предоставляем услуги регистрации и управления доменами, веб-хостинг, аукцион доменов, бесплатный DNS сервис, SSL сертификаты, удобный WHOIS интерфейс и много других полезных и уникальных услуг.</p>
+        <blockquote class="go">
+          <p>Наш адрес - не дом и не улица, наш адрес - Советский Союз<br>
+          Время работы: понедельник-пятница c 9:00 до 18:00 (перерыв с 13:00 до 14:00)
+          </p>
+        </blockquote>
+        <p>Контактные телефоны:
+        <ul>
+        <li>+7 (495) 987-45-96</li>
+        <li>+7 (846) 373-30-47</li>
+        <li> 8 (800) 100-40-22</li>
+        </ul>
+        Факс:
+        <ul>
+        <li>+7 (846) 379-90-39</li>
+        </ul>
+
+        E-mail:
+        <ul>
+        <li>support@webnames.ru</li>
+        </ul>
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- FOOTER: Site footer for links, copyright, etc. -->
+<div id="footer">
+  <div id="width"> <span class="floatLeft"> Design <a rel="nofollow" target="_blank" href="http://fullahead.org">Fullahead</a> <span class="grey">|</span> valid <a rel="nofollow" target="_blank" href="http://validator.w3.org/check?uri=referer">XHTML</a> <span class="grey">|</span> should be valid <a rel="nofollow" target="_blank" href="http://jigsaw.w3.org/css-validator">CSS</a> </span>
+  <span class="floatRight"> <a href="/">главная</a> <span class="grey">|</span> <a href="/dns.html">dns</a> <span class="grey">|</span> <a href="/stat.html">статистика</a> <span class="grey">|</span> <a href="/srs.html">regtimesrs</a> </span> </div>
+</div>
+</body>
+</html>

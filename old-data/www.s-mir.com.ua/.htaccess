@@ -1,0 +1,23 @@
+#php_flag register_globals Off
+#php_flag magic_quotes_gpc Off
+#php_value upload_max_filesize 10M
+
+<FilesMatch "\.(html|js|css|bmp|gif|jpe?g|png|swf|htc|xml|xsl|wsdl|gz|ico)$">
+Allow from all
+</FilesMatch>
+
+AddType application/x-javascript .gz
+AddEncoding gzip .gz
+
+RewriteEngine on
+RewriteBase /
+
+RewriteCond %{HTTP:Accept-encoding} gzip
+RewriteCond %{REQUEST_FILENAME}.gz -f
+RewriteRule ^(.*)$ $1.gz [QSA,L]
+
+RewriteCond %{THE_REQUEST} ^GET\ .*/index\.html\ HTTP
+RewriteRule ^(.*)index\.html$ /$1 [R=301,L]
+
+RewriteCond  %{REQUEST_FILENAME}  !-f
+RewriteRule ^.*$ /index.php

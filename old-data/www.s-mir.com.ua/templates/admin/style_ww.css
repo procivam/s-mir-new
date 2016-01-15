@@ -1,0 +1,237 @@
+/* new */
+.top_link:link{font-family: Arial, Tahoma, Helvetica, sans-serif; font-size: 18px; color: #2FB4D3;font-weight:normal;text-decoration: none;}
+.top_link:visited{font-family: Arial, Tahoma, Helvetica, sans-serif; font-size: 18px; color: #2FB4D3;font-weight:normal;text-decoration: none;}
+.top_link:hover{font-family: Arial, Tahoma, Helvetica, sans-serif; font-size: 18px; color: #2FB4D3;font-weight:normal;text-decoration: underline;}
+
+.qut{
+font-family: Arial, Tahoma, Helvetica, sans-serif;
+font-size: 20px;
+font-style:normal;
+color: #8D8D8D;
+font-weight:normal;
+}
+
+.top_link2:link{font-family: Arial, Tahoma, Helvetica, sans-serif; font-size: 13px; color: #727272;font-weight:normal;text-decoration: none;}
+.top_link2:visited{font-family: Arial, Tahoma, Helvetica, sans-serif; font-size: 13px; color: #727272;font-weight:normal;text-decoration: none;}
+.top_link2:hover{font-family: Arial, Tahoma, Helvetica, sans-serif; font-size: 13px; color: #FF0087;font-weight:normal;text-decoration: underline;}
+
+.filter:link{font-family: Arial, Tahoma, Helvetica, sans-serif; font-size: 13px; color: #56CFEA;font-weight:normal;text-decoration: none;}
+.filter:visited{font-family: Arial, Tahoma, Helvetica, sans-serif; font-size: 13px; color: #56CFEA;font-weight:normal;text-decoration: none;}
+.filter:hover{font-family: Arial, Tahoma, Helvetica, sans-serif; font-size: 13px; color: #FFFFFF;font-weight:normal;text-decoration: underline;}
+
+.filter_remove:link{font-family: Arial, Tahoma, Helvetica, sans-serif; font-size: 13px; color: #2FB4D2;font-weight:normal;text-decoration: underline;}
+.filter_remove:visited{font-family: Arial, Tahoma, Helvetica, sans-serif; font-size: 13px; color: #2FB4D2;font-weight:normal;text-decoration: underline;}
+.filter_remove:hover{font-family: Arial, Tahoma, Helvetica, sans-serif; font-size: 13px; color: #2FB4D2;font-weight:normal;text-decoration: none;}
+
+.filtertext{
+font-family: Arial, Tahoma, Helvetica, sans-serif;
+font-size: 11px;
+font-style:normal;
+color: #393939;
+font-weight:normal;
+}
+/* end_new */
+
+.hint{
+display:none;
+position:absolute; 
+z-index:50; 
+background:#303030; 
+color:#FEFEFE; 
+padding:5px; 
+border:solid 1px #FEFEFE; 
+white-space: nowrap;
+}
+
+form
+{
+padding: 0px;
+margin: 0px; 
+}
+
+header
+{
+font-family: Arial, Tahoma, Helvetica, sans-serif;
+font-size: 13px;
+font-style:normal;
+color: #A3A3A3;
+font-weight:bold;
+}
+
+cell1
+{
+font-family: Arial, Tahoma, Helvetica, sans-serif;
+font-size: 13px;
+font-style:normal;
+color: #A3A3A3;
+font-weight:normal;
+}
+
+cell2
+{
+font-family: Arial, Tahoma, Helvetica, sans-serif;
+font-size: 13px;
+font-style:normal;
+color: #A3A3A3;
+font-weight:normal;
+}
+
+b
+{
+font-family: Arial, Tahoma, Helvetica, sans-serif;
+font-size: 13px;
+font-style:normal;
+color: #A3A3A3;
+font-weight:bold;
+}
+
+td
+{
+font-family: Arial, Tahoma, Helvetica, sans-serif;
+font-size: 13px;
+font-style:normal;
+color: #A3A3A3;
+font-weight:normal;
+}
+
+.black10
+{
+font-family: Arial, Tahoma, Helvetica, sans-serif;
+font-size: 10px;
+font-style:normal;
+color: #313131;
+font-weight:normal;
+}
+
+.black13
+{
+font-family: Arial, Tahoma, Helvetica, sans-serif;
+font-size: 13px;
+font-style:normal;
+color: #060606;
+font-weight:normal;
+}
+
+.black13 b
+{
+font-family: Arial, Tahoma, Helvetica, sans-serif;
+font-size: 13px;
+font-style:normal;
+color: #060606;
+font-weight:bold;
+}
+
+
+.help_top
+{
+font-family: Arial, Tahoma, Helvetica, sans-serif;
+font-size: 13px;
+font-style:normal;
+color: #7A7878;
+font-weight:bold;
+}
+
+.help_txt
+{
+font-family: Arial, Tahoma, Helvetica, sans-serif;
+font-size: 13px;
+font-style:normal;
+color: #8B8B8A;
+font-weight:normal;
+}
+
+.top
+{
+font-family: Arial, Tahoma, Helvetica, sans-serif;
+font-size: 13px;
+font-style:normal;
+color: #727272;
+font-weight:bold;
+}
+
+.blue13
+{
+font-family: Arial, Tahoma, Helvetica, sans-serif;
+font-size: 13px;
+font-style:normal;
+color: #2FB4D2;
+font-weight:normal;
+}
+
+h1
+{
+font-family: Arial, Tahoma, Helvetica, sans-serif;
+font-size: 33px;
+font-style:normal;
+color: #EBEBE2;
+font-weight:normal;
+padding: 0px;
+margin: 0px; 
+}
+
+h1 span{font-family: Arial, Tahoma, Helvetica, sans-serif;font-size: 26px;font-style:normal;color:#2FB4D2;font-weight:normal;}
+
+h1 a:link{font-family: Arial, Tahoma, Helvetica, sans-serif; font-size: 26px; color: #2FB4D2;font-weight:normal;text-decoration: underline;}
+h1 a:visited{font-family: Arial, Tahoma, Helvetica, sans-serif; font-size: 26px; color: #2FB4D2;font-weight:normal;text-decoration: underline;}
+h1 a:hover{font-family: Arial, Tahoma, Helvetica, sans-serif; font-size: 26px; color: #2FB4D2;font-weight:normal;text-decoration: none;}
+
+h2
+{
+font-family: Arial, Tahoma, Helvetica, sans-serif;
+font-size: 33px;
+font-style:normal;
+color: #000000;
+font-weight:normal;
+padding: 0px;
+margin: 0px; 
+}
+
+h3
+{
+font-family: Arial, Tahoma, Helvetica, sans-serif;
+font-size: 13px;
+font-style:normal;
+color: #000000;
+font-weight:bold;
+padding: 0px;
+margin: 0px; 
+}
+
+h4
+{
+padding: 0px;
+margin: 0px; 
+}
+
+a:link{font-family: Arial, Tahoma, Helvetica, sans-serif; font-size: 13px; color: #2FB4D2;font-weight:normal;text-decoration: underline;}
+a:visited{font-family: Arial, Tahoma, Helvetica, sans-serif; font-size: 13px; color: #2FB4D2;font-weight:normal;text-decoration: underline;}
+a:hover{font-family: Arial, Tahoma, Helvetica, sans-serif; font-size: 13px; color: #A0A0A0;font-weight:normal;text-decoration: none;}
+
+.blue:link{font-family: Arial, Tahoma, Helvetica, sans-serif; font-size: 10px; color: #2CA1BC;font-weight:normal;text-decoration: none;}
+.blue:visited{font-family: Arial, Tahoma, Helvetica, sans-serif; font-size: 10px; color: #2CA1BC;font-weight:normal;text-decoration: none;}
+.blue:hover{font-family: Arial, Tahoma, Helvetica, sans-serif; font-size: 10px; color: #313131;font-weight:normal;text-decoration: none;}
+
+.fioll:link{font-family: Arial, Tahoma, Helvetica, sans-serif; font-size: 13px; color: #C000FF;font-weight:normal;text-decoration: underline;}
+.fioll:visited{font-family: Arial, Tahoma, Helvetica, sans-serif; font-size: 13px; color: #C000FF;font-weight:normal;text-decoration: underline;}
+.fioll:hover{font-family: Arial, Tahoma, Helvetica, sans-serif; font-size: 13px; color: #7A7878;font-weight:normal;text-decoration: none;}
+
+.green:link{font-family: Arial, Tahoma, Helvetica, sans-serif; font-size: 13px; color: #3B9BB3;font-weight:normal;text-decoration: underline;}
+.green:visited{font-family: Arial, Tahoma, Helvetica, sans-serif; font-size: 13px; color: #3B9BB3;font-weight:normal;text-decoration: underline;}
+.green:hover{font-family: Arial, Tahoma, Helvetica, sans-serif; font-size: 13px; color: #7A7878;font-weight:normal;text-decoration: none;}
+
+.black:link{font-family: Arial, Tahoma, Helvetica, sans-serif; font-size: 12px; color: #303030;font-weight:normal;text-decoration: underline;}
+.black:visited{font-family: Arial, Tahoma, Helvetica, sans-serif; font-size: 12px; color: #303030;font-weight:normal;text-decoration: underline;}
+.black:hover{font-family: Arial, Tahoma, Helvetica, sans-serif; font-size: 12px; color: #7A7878;font-weight:normal;text-decoration: none;}
+
+.grey:link{font-family: Arial, Tahoma, Helvetica, sans-serif; font-size: 13px; color: #727272;font-weight:normal;text-decoration: underline;}
+.grey:visited{font-family: Arial, Tahoma, Helvetica, sans-serif; font-size: 13px; color: #727272;font-weight:normal;text-decoration: underline;}
+.grey:hover{font-family: Arial, Tahoma, Helvetica, sans-serif; font-size: 13px; color: #D41050;font-weight:normal;text-decoration: none;}
+
+.black11:link{font-family: Arial, Tahoma, Helvetica, sans-serif; font-size: 11px; color: #303030;font-weight:normal;text-decoration: underline;}
+.black11:visited{font-family: Arial, Tahoma, Helvetica, sans-serif; font-size: 11px; color: #303030;font-weight:normal;text-decoration: underline;}
+.black11:hover{font-family: Arial, Tahoma, Helvetica, sans-serif; font-size: 11px; color: #7A7878;font-weight:normal;text-decoration: none;}
+
+.group:link{font-family: Arial, Tahoma, Helvetica, sans-serif; font-size: 13px; color: #727272;font-weight:bold;text-decoration: underline;}
+.group:visited{font-family: Arial, Tahoma, Helvetica, sans-serif; font-size: 13px; color: #727272;font-weight:bold;text-decoration: underline;}
+.group:hover{font-family: Arial, Tahoma, Helvetica, sans-serif; font-size: 13px; color: #7A7878;font-weight:bold;text-decoration: none;}
+

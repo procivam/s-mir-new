@@ -1,0 +1,1 @@
+UPDATE `{domain}_options` SET `name`='Транслитерация идентификаторов URL',`var`='transurl',`value`='0'  WHERE `item`='' AND `var`='fckmini';

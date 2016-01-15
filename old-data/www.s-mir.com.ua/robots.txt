@@ -1,0 +1,39 @@
+User-agent: Googlebot
+Disallow: *addbasket
+Disallow: *sort=
+Disallow: *rows=
+Disallow: *fname=
+Disallow: *.pdf
+Disallow: *download
+Disallow: *filterdel
+
+User-agent: Yandex
+Disallow: *addbasket
+Disallow: *sort=
+Disallow: *rows=
+Disallow: *fname=
+Disallow: *.pdf
+Disallow: *download
+Disallow: *filterdel
+
+Host: s-mir.com.ua
+
+User-agent: Mail.Ru
+Disallow: *addbasket
+Disallow: *sort=
+Disallow: *rows=
+Disallow: *fname=
+Disallow: *.pdf
+Disallow: *download
+Disallow: *filterdel
+
+User-agent: *
+Disallow: *addbasket
+Disallow: *sort=
+Disallow: *rows=
+Disallow: *fname=
+Disallow: *.pdf
+Disallow: *download
+Disallow: *filterdel
+
+Sitemap: http://s-mir.com.ua/sitemap.xml

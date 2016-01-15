@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="utf-8"?>
+<sites>
+	<types>
+		<type>
+			<id>1</id>
+			<name>Информационный</name>
+		</type>
+		<type>
+			<id>2</id>
+			<name>Корпоративный</name>
+		</type>
+		<type>
+			<id>3</id>
+			<name>Магазин</name>
+		</type>
+	</types>
+	<items>
+		<item>
+			<id>1</id>
+			<name>Информационный сайт</name>
+			<type>1</type>
+			<description>Каталог статей, фотогалерея, архив, поиск по сайту.</description>
+			<download>http://www.a-cms.ru/download.php?id=215</download>
+			<image>http://www.a-cms.ru/files/acms/reg_images/info01.jpg</image>
+			<simage>http://www.a-cms.ru/cache/images/acms/info01_w280_h240_b3.jpg</simage>
+		</item>
+		<item>
+			<id>2</id>
+			<name>Информационный сайт</name>
+			<type>1</type>
+			<description>Каталог статей, фотогалерея, архив, поиск по сайту.</description>
+			<download>http://www.a-cms.ru/download.php?id=216</download>
+			<image>http://www.a-cms.ru/files/acms/reg_images/info02.jpg</image>
+			<simage>http://www.a-cms.ru/cache/images/acms/info02_w280_h240_b3.jpg</simage>
+		</item>
+		<item>
+			<id>3</id>
+			<name>Корпоративный сайт-витрина</name>
+			<type>2</type>
+			<description>Каталог продукции, новости, поиск по сайту.</description>
+			<download>http://www.a-cms.ru/download.php?id=208</download>
+			<image>http://www.a-cms.ru/files/acms/reg_images/corp01.jpg</image>
+			<simage>http://www.a-cms.ru/cache/images/acms/corp01_w280_h240_b3.jpg</simage>
+		</item>
+		<item>
+			<id>4</id>
+			<name>Магазин</name>
+			<type>3</type>
+			<description>Каталог товаров, корзина, подбор по параметрам, поиск по сайту.</description>
+			<download>http://www.a-cms.ru/download.php?id=209</download>
+			<image>http://www.a-cms.ru/files/acms/reg_images/shop01.jpg</image>
+			<simage>http://www.a-cms.ru/cache/images/acms/shop01_w280_h240_b3.jpg</simage>
+		</item>
+		<item>
+			<id>5</id>
+			<name>Магазин</name>
+			<type>3</type>
+			<description>Каталог товаров, корзина, подбор по параметрам, поиск по сайту.</description>
+			<download>http://www.a-cms.ru/download.php?id=210</download>
+			<image>http://www.a-cms.ru/files/acms/reg_images/shop02.jpg</image>
+			<simage>http://www.a-cms.ru/cache/images/acms/shop02_w280_h240_b3.jpg</simage>
+		</item>
+		<item>
+			<id>6</id>
+			<name>Магазин</name>
+			<type>3</type>
+			<description>Каталог товаров, корзина, поиск по сайту.</description>
+			<download>http://www.a-cms.ru/download.php?id=227</download>
+			<image>http://www.a-cms.ru/files/acms/reg_images/shop03.jpg</image>
+			<simage>http://www.a-cms.ru/cache/images/acms/shop03_w280_h240_b3.jpg</simage>
+		</item>
+		<item>
+			<id>7</id>
+			<name>Магазин</name>
+			<type>3</type>
+			<description>Каталог товаров, корзина, поиск по сайту.</description>
+			<download>http://www.a-cms.ru/download.php?id=228</download>
+			<image>http://www.a-cms.ru/files/acms/reg_images/shop04.jpg</image>
+			<simage>http://www.a-cms.ru/cache/images/acms/shop04_w280_h240_b3.jpg</simage>
+		</item>
+		<item>
+			<id>8</id>
+			<name>Магазин</name>
+			<type>3</type>
+			<description>Каталог товаров, корзина, поиск по сайту.</description>
+			<download>http://www.a-cms.ru/download.php?id=229</download>
+			<image>http://www.a-cms.ru/files/acms/reg_images/shop05.jpg</image>
+			<simage>http://www.a-cms.ru/cache/images/acms/shop05_w280_h240_b3.jpg</simage>
+		</item>
+		<item>
+			<id>9</id>
+			<name>Магазин</name>
+			<type>3</type>
+			<description>Каталог товаров, корзина.</description>
+			<download>http://www.a-cms.ru/download.php?id=235</download>
+			<image>http://www.a-cms.ru/files/acms/reg_images/shop06.jpg</image>
+			<simage>http://www.a-cms.ru/cache/images/acms/shop06_w280_h240_b3.jpg</simage>
+		</item>
+		<item>
+			<id>10</id>
+			<name>Магазин</name>
+			<type>3</type>
+			<description>Каталог товаров, корзина, поиск по сайту.</description>
+			<download>http://www.a-cms.ru/download.php?id=236</download>
+			<image>http://www.a-cms.ru/files/acms/reg_images/shop07.jpg</image>
+			<simage>http://www.a-cms.ru/cache/images/acms/shop07_w280_h240_b3.jpg</simage>
+		</item>
+		<item>
+			<id>11</id>
+			<name>Магазин</name>
+			<type>3</type>
+			<description>Каталог товаров, корзина, поиск по сайту.</description>
+			<download>http://www.a-cms.ru/download.php?id=237</download>
+			<image>http://www.a-cms.ru/files/acms/reg_images/shop08.jpg</image>
+			<simage>http://www.a-cms.ru/cache/images/acms/shop08_w280_h240_b3.jpg</simage>
+		</item>
+	</items>
+</sites>

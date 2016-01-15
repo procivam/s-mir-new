@@ -1,0 +1,1 @@
+ALTER TABLE `{section}_orders` ADD `pay` int(11) NOT NULL default '0';

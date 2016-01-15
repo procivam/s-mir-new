@@ -1,0 +1,2 @@
+Allow from all
+AddType "text/html; charset=utf-8" .html

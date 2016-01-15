@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<pages>
+	<page>
+		<id>main</id>
+		<name>Главная страница</name>
+		<template>shoplite_main.tpl</template>
+	</page>
+	<page>
+		<id>category</id>
+		<name>Страница категории</name>
+		<template>shoplite_category.tpl</template>
+	</page>
+	<page>
+		<id>page</id>
+		<name>Детальная страница</name>
+		<template>shoplite_page.tpl</template>
+	</page>
+	<page>
+		<id>result</id>
+		<name>Страница результатов выборки</name>
+		<template>shoplite_result.tpl</template>
+	</page>
+	<page>
+		<id>basket</id>
+		<name>Страница корзины</name>
+		<template>shoplite_basket.tpl</template>
+	</page>
+	<page>
+		<id>order</id>
+		<name>Страница заказа</name>
+		<template>shoplite_order.tpl</template>
+	</page>
+	<page>
+		<id>message</id>
+		<name>Страница собщения</name>
+		<template>shoplite_message.tpl</template>
+	</page>
+	<page>
+		<id>price</id>
+		<name>Страница полного списка товаров (прайс)</name>
+		<template>shoplite_price.tpl</template>
+	</page>
+	<page>
+		<id>compare</id>
+		<name>Страница сравнения</name>
+		<template>shoplite_compare.tpl</template>
+	</page>
+	<page>
+		<id>myorders</id>
+		<name>Страница своих заказов</name>
+		<template>shoplite_myorders.tpl</template>
+	</page>
+</pages>

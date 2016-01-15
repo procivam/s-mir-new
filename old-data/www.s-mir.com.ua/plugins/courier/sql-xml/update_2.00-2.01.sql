@@ -1,0 +1,1 @@
+ALTER TABLE `{structure}` ADD `data` blob default NULL;
