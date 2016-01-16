@@ -52,6 +52,7 @@
             $this->_seo['title'] = $this->current->title;
             $this->_seo['keywords'] = $this->current->keywords;
             $this->_seo['description'] = $this->current->description;
+            $this->_seo['seo_text'] = $this->current->text;
             //            Brands
             $brands = Brands::getRows(1);
             // Get groups with parent_id = 0
@@ -82,7 +83,6 @@
             }
 //            Brands
             $brands = Brands::getRows(1);
-            var_dump($brands);
             // Seo
             $this->setSeoForGroup($group);
             // Add plus one to views

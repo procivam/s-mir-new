@@ -40,6 +40,8 @@
             $this->_seo['title'] = $this->current->title;
             $this->_seo['keywords'] = $this->current->keywords;
             $this->_seo['description'] = $this->current->description;
+            $this->_seo['seo_text'] = $this->current->text;
+
             Config::set( 'content_class', 'news_block' );
             $page = !(int) Route::param('page') ? 1 : (int) Route::param('page');
             // Get Rows

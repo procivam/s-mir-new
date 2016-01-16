@@ -15,7 +15,7 @@
     <?php endforeach ?>
     <?php if (trim(strip_tags(Core\Arr::get($_seo, 'seo_text')))): ?>
         <div class="seoTxt" id="seoTxt">
-            <div class="wSize wTxt">
+            <div class="wrapper wTxt">
                 <?php echo Core\Arr::get($_seo, 'seo_text'); ?>
             </div>
         </div>
