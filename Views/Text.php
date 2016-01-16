@@ -15,7 +15,7 @@
     <?php endforeach ?>
     <?php if (trim(strip_tags(Core\Arr::get($_seo, 'seo_text')))): ?>
         <div class="seoTxt" id="seoTxt">
-            <div class="wSize wTxt">
+            <div class="wrapper wTxt">
                 <?php echo Core\Arr::get($_seo, 'seo_text'); ?>
             </div>
         </div>
@@ -33,7 +33,7 @@
                 <?php echo $_content; ?>
             </div>
 
-            <div id="clonSeo"></div>
+            <div id="clonSeo" style="margin-top: 20px;"></div>
         </div>
     </div>
     <?php echo Core\Widgets::get('Footer', array('counters' => Core\Arr::get($_seo, 'scripts')['counter'], 'config' => $_config)); ?>

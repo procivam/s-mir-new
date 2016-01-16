@@ -27,7 +27,7 @@
                 return Config::error();
             }
             $this->setBreadcrumbs( $this->current->name, $this->current->alias );
-            $this->_template = 'CatalogItemsWithoutFilter';
+            $this->_template = 'Catalog';
             $this->page = !(int) Route::param('page') ? 1 : (int) Route::param('page');
             $this->limit = (int) Arr::get($_GET, 'per_page') ? (int) Arr::get($_GET, 'per_page') : Config::get('basic.limit');
             $this->offset = ($this->page - 1) * $this->limit;

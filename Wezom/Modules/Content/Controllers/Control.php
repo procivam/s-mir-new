@@ -22,7 +22,7 @@
         }
 
         function indexAction () {
-            $result = Model::getRows(NULL, 'name', 'ASC');
+            $result = Model::getRows(1, 'name', 'ASC');
             $this->_content = View::tpl(
                 array(
                     'result'        => $result,

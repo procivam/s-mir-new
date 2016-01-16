@@ -56,7 +56,7 @@
     html {display: block;font-family: sans-serif;font-size: 100%;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;}
 
     input[type="text"],input[type="password"],input[type="submit"],input[type="tel"],input[type="email"],textarea {-webkit-appearance: none;-webkit-border-radius:0;border-radius:0;}
-    input[type="text"]:focus,input[type="tel"]:focus,input[type="email"]:focus,textarea:focus,input[type="password"]:focus {background: #ffface !important;}
+    /*input[type="text"]:focus,input[type="tel"]:focus,input[type="email"]:focus,textarea:focus,input[type="password"]:focus {background: #ffffff !important;}*/
     input[type="text"]:focus::-webkit-input-placeholder,input[type="tel"]:focus::-webkit-input-placeholder,input[type="email"]:focus::-webkit-input-placeholder,textarea:focus::-webkit-input-placeholder,input[type="password"]:focus::-webkit-input-placeholder {color: transparent;}
     input[type="text"]:focus::-moz-placeholder,input[type="tel"]:focus::-moz-placeholder,input[type="email"]:focus::-moz-placeholder,textarea:focus::-moz-placeholder,input[type="password"]:focus::-moz-placeholder {color: transparent;}
     input[type="text"]:focus::-ms-placeholder,input[type="tel"]:focus::-ms-placeholder,input[type="email"]:focus::-ms-placeholder,textarea:focus::-ms-placeholder,input[type="password"]:focus::-moz-placeholder {color: transparent;}

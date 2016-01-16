@@ -14,7 +14,8 @@
             <?php echo $script; ?>
         <?php endforeach ?>
         <div class="seoTxt" id="seoTxt">
-            <div class="wSize wTxt wrapper">
+            <div class="wTxt wrapper">
+                <h1><?php echo Core\Arr::get($_seo, 'h1') ?></h1>
                 <?php echo $_content; ?>
             </div>
         </div>
