@@ -2,7 +2,7 @@
     <div class="form-actions" style="display: none;">
         <input class="submit btn btn-primary pull-right" type="submit" value="Отправить">
     </div>
-    <div class="col-md-6">
+    <div class="col-md-7">
         <div class="widget box">
             <div class="widgetContent">
                 <div class="form-vertical row-border">
@@ -150,6 +150,31 @@
                                         <input class="form-control" id="f_old_cost" name="FORM[cost_old]" type="tel" value="<?php echo $obj->cost_old; ?>" />
                                     </div>
                                 </div>
+
+                                <div class="form-group">
+                                    <label class="control-label">Описание</label>
+                                    <div class="">
+                                        <textarea class="tinymceEditor form-control" rows="20" name="FORM[text]"><?php echo $obj->text; ?></textarea>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label class="control-label">Характеритики</label>
+                                    <div class="">
+                                        <textarea class="tinymceEditor form-control" rows="20" name="FORM[characteristics]"><?php echo $obj->characteristics; ?></textarea>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label class="control-label">Строчки</label>
+                                    <div class="">
+                                        <textarea class="tinymceEditor form-control" rows="20" name="FORM[gallery]"><?php echo $obj->gallery; ?></textarea>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label class="control-label">Комплектация</label>
+                                    <div class="">
+                                        <textarea class="tinymceEditor form-control" rows="20" name="FORM[equipment]"><?php echo $obj->equipment; ?></textarea>
+                                    </div>
+                                </div>
                             </div>
                         </li>
                         <li class="t_item">
@@ -193,7 +218,7 @@
             </div>
         </div>
     </div>
-    <div class="col-md-6">
+    <div class="col-md-5">
         <div class="widget">
             <div class="widgetHeader myWidgetHeader">
                 <div class="widgetTitle">

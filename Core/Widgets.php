@@ -215,18 +215,12 @@
 
 
         public function Groups_CatalogMenuLeft() {
-            if( !empty($this->_tree) ) {
-                $result = $this->_tree;
-            } else {
-                $result = Groups::getRows(1, 'sort');
-                $this->_tree = $result;
+            $result = DB::select()->from('catalog_tree')->where('status', '=', 1)->where('parent_id', '=', 0)
+                ->order_by('sort')->find_all();
+            if (sizeof($result) == 0) {
+                return null;
             }
-            $arr = array();
-            foreach( $result as $obj ) {
-                $arr[$obj->parent_id][] = $obj;
-            }
-            $rootParent = Support::getRootParent($result, Route::param('group'));
-            return array( 'result' => $arr, 'root' => $rootParent );
+            return array('result' => $result);
         }
 
 
@@ -242,6 +236,17 @@
                 $arr[$obj->parent_id][] = $obj;
             }
             return array( 'result' => $arr );
+        }
+
+
+        public function Index_Groups() {
+
+            $result = DB::select()->from('catalog_tree')->where('status', '=', 1)->where('parent_id', '=', 0)
+                ->order_by('sort')->find_all();
+            if (sizeof($result) == 0) {
+                return null;
+            }
+            return array( 'result' => $result );
         }
 
 
@@ -270,7 +275,7 @@
 
 
         public function Index_Banners() {
-            $result = Common::factory('banners')->getRows(1, DB::expr('rand()'), NULL, 3);
+            $result = Common::factory('banners')->getRows(1, DB::expr('rand()'), NULL, 2);
             if( !sizeof( $result ) ) {
                 return FALSE;
             }
@@ -278,12 +283,12 @@
         }
 
 
-        public function News() {
-            $result = News::getRows(1, 'date', 'DESC', 1);
+        public function Index_News() {
+            $result = News::getRows(1, 'date', 'DESC', 2);
             if( !sizeof( $result ) ) {
                 return FALSE;
             }
-            return array( 'obj' => $result[0] );
+            return array( 'result' => $result );
         }
 
 
@@ -328,6 +333,7 @@
             $array['contentMenu'] = $contentMenu;
             $array['user'] = User::info();
             $array['countItemsInTheCart'] = Cart::factory()->_count_goods;
+            $array['totalCartAmount'] = Cart::factory()->get_summa();
             return $array;
         }
 
@@ -336,22 +342,22 @@
             $styles = array(
                 HTML::media('css/plugin.css'),
                 HTML::media('css/style.css'),
-//                HTML::media('css/programmer/magnific.css'),
                 HTML::media('css/programmer/fpopup.css'),
                 HTML::media('css/programmer/my.css'),
-                HTML::media('css/responsive.css'),
             );
             $scripts = array(
                 HTML::media('js/modernizr.js'),
                 HTML::media('js/jquery-1.11.0.min.js'),
                 HTML::media('js/basket.js'),
                 HTML::media('js/plugins.js'),
+                HTML::media('js/parsley.js'),
+                HTML::media('js/jquery.notification.js'),
+//                HTML::media('js/jqueryCarus.js'),
+                HTML::media('js/custom.js'),
                 HTML::media('js/init.js'),
                 HTML::media('js/programmer/my.js'),
             );
-            $scripts_no_minify = array(
-                HTML::media('js/programmer/ulogin.js'),
-            );
+            $scripts_no_minify = array();
             return array('scripts' => $scripts, 'styles' => $styles, 'scripts_no_minify' => $scripts_no_minify);
         }
 

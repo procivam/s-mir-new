@@ -1,44 +1,44 @@
 <!DOCTYPE html>
 <html lang="ru-ru" dir="ltr">
 <!-- (c) студия Wezom | www.wezom.com.ua -->
-<head>  
+<head>
     <?php echo Core\Widgets::get('Head', $_seo); ?>
     <?php foreach ( $_seo['scripts']['head'] as $script ): ?>
         <?php echo $script; ?>
     <?php endforeach ?>
     <?php echo $GLOBAL_MESSAGE; ?>
 </head>
-<body>
+<body class="mainfon">
+<div class="main">
     <?php foreach ( $_seo['scripts']['body'] as $script ): ?>
         <?php echo $script; ?>
     <?php endforeach ?>
-    <div class="seoTxt" id="seoTxt">
-        <div class="wSize wTxt">
-            <?php echo trim(strip_tags(Core\Config::get('seo_text'))) ? Core\Config::get('seo_text') : ''; ?>
+    <?php if (trim(strip_tags(Core\Arr::get($_seo, 'seo_text')))): ?>
+        <div class="seoTxt" id="seoTxt">
+            <div class="wSize wTxt">
+                <?php echo Core\Arr::get($_seo, 'seo_text'); ?>
+            </div>
         </div>
-    </div>
-    <div class="wWrapper">
-        <?php echo Core\Widgets::get('Header'); ?>
-        <div class="wConteiner">
-            <div class="wSize">
-                <?php echo $_breadcrumbs; ?>
-                <div class="folt_cat_block clearFix cat_ul_block">
-                    <div class="fll">
-                        <?php echo Core\Widgets::get('Groups_CatalogMenuLeft'); ?>
-                    </div>
-                    <div class="flr">
-                        <?php echo $_content; ?>
-                    </div>
+    <?php endif ?>
+
+    <?php echo Core\Widgets::get('Header', array('config' => $_config)); ?>
+
+    <div class="content clearfix">
+        <div class="wrapper">
+            <div class="left-col">
+                <?php echo Core\Widgets::get('Groups_CatalogMenuLeft'); ?>
+            </div>
+            <div class="middle-col">
+                <div class="zag">
+                    <h1><?php echo Core\Arr::get($_seo, 'h1'); ?></h1>
+                    <?php echo $_breadcrumbs; ?>
                 </div>
-                <?php echo Core\Widgets::get('VK'); ?>
-                <?php echo Core\Widgets::get('News'); ?>
-                <?php echo Core\Widgets::get('Articles'); ?>
-                <div class="clear"></div>
+                <?php echo $_content; ?>
                 <div id="clonSeo"></div>
             </div>
         </div>
     </div>
-    <?php echo Core\Widgets::get('HiddenData'); ?>
-    <?php echo Core\Widgets::get('Footer', array('counters' => Core\Arr::get($_seo, 'counters'), 'config' => $_config)); ?>
+    <?php echo Core\Widgets::get('Footer', array('counters' => Core\Arr::get($_seo, 'scripts')['counter'], 'config' => $_config)); ?>
+</div>
 </body>
 </html>

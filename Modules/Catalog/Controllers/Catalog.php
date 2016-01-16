@@ -10,6 +10,7 @@
     use Core\Arr;
     use Modules\Catalog\Models\Filter;
     use Core\Text;
+    use Modules\Catalog\Models\Brands;
 
     use Modules\Catalog\Models\Groups AS Model;
     use Modules\Content\Models\Control;
@@ -30,7 +31,7 @@
             if( !$this->current ) {
                 return Config::error();
             }
-            $this->setBreadcrumbs( $this->current->name, $this->current->alias );
+            $this->setBreadcrumbs( $this->current->name, 'products' );
             $this->page = !(int) Route::param('page') ? 1 : (int) Route::param('page');
             $limit = Config::get('basic.limit_groups');
             $sort = 'sort'; $type = 'ASC';
@@ -51,6 +52,8 @@
             $this->_seo['title'] = $this->current->title;
             $this->_seo['keywords'] = $this->current->keywords;
             $this->_seo['description'] = $this->current->description;
+            //            Brands
+            $brands = Brands::getRows(1);
             // Get groups with parent_id = 0
             $result = Model::getInnerGroups(0, $this->sort, $this->type, $this->limit, $this->offset);
             // Count of parent groups
@@ -58,7 +61,8 @@
             // Generate pagination
             $pager = Pager::factory($this->page, $count, $this->limit)->create();
             // Render template
-            $this->_content = View::tpl( array('result' => $result, 'pager' => $pager), 'Catalog/Groups' );
+            $this->_content = View::tpl( array('result' => $result, 'pager' => $pager, 'group' => null, 'brands' => $brands),
+                'Catalog/Groups' );
         }
 
 
@@ -76,6 +80,9 @@
             if (!$count) {
                 return $this->listAction();
             }
+//            Brands
+            $brands = Brands::getRows(1);
+            var_dump($brands);
             // Seo
             $this->setSeoForGroup($group);
             // Add plus one to views
@@ -85,7 +92,7 @@
             // Generate pagination
             $pager = Pager::factory($this->page, $count, $this->limit)->create();
             // Render template
-            $this->_content = View::tpl( array('result' => $result, 'pager' => $pager), 'Catalog/Groups' );
+            $this->_content = View::tpl( array('result' => $result, 'pager' => $pager, 'group' => $group, 'brands' => $brands), 'Catalog/Groups' );
         }
 
 
@@ -94,7 +101,6 @@
             if( Config::get('error') ) {
                 return false;
             }
-            $this->_template = 'ItemsList';
             Route::factory()->setAction('list');
             // Filter parameters to array if need
             Filter::setFilterParameters();

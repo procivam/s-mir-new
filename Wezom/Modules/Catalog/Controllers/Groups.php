@@ -52,7 +52,7 @@
                     $post['alias'] = Model::getUniqueAlias(Arr::get($post, 'alias'), Route::param('id'));
                     $res = Model::update($post, Route::param('id'));
                     if($res) {
-                        Model::uploadImage($res);
+                        Model::uploadImage(Route::param('id'));
                         Model::changeBrandsCommunications($groupBrands, Route::param('id'));
                         Model::changeSpecificationsCommunications($groupSpec, Route::param('id'));
                         Message::GetMessage(1, 'Вы успешно изменили данные!');

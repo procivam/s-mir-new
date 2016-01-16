@@ -38,6 +38,12 @@
                         </div>
                     </div>
                     <div class="form-group">
+                        <label class="control-label" for="f_text">Описание</label>
+                        <div class="">
+                            <textarea id="f_text" class="form-control tinymceEditor" name="FORM[text]" rows="10"><?php echo $obj->text; ?></textarea>
+                        </div>
+                    </div>
+                    <div class="form-group">
                         <label class="control-label"></label>
                         <div class="">
                             <?php if (is_file( HOST . Core\HTML::media('images/slider/big/'.$obj->image) )): ?>

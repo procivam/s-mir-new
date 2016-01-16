@@ -9,8 +9,8 @@
         'banners' => array(
             array(
                 'path' => '',
-                'width' => 483,
-                'height' => 160,
+                'width' => 197,
+                'height' => 155,
                 'resize' => 1,
                 'crop' => 1,
             ),
@@ -26,8 +26,8 @@
             ),
             array(
                 'path' => 'big',
-                'width' => 1460,
-                'height' => 500,
+                'width' => 450,
+                'height' => 350,
                 'resize' => 1,
                 'crop' => 1,
             ),
@@ -70,7 +70,7 @@
             ),
             array(
                 'path' => 'big',
-                'width' => 600,
+                'width' => 470,
                 'height' => NULL,
                 'resize' => 1,
                 'crop' => 0,
@@ -106,33 +106,45 @@
         // Catalog groups images
         'catalog_tree' => array(
             array(
-                'path' => '',
-                'width' => 240,
-                'height' => 240,
+                'path' => 'small',
+                'width' => 190,
+                'height' => 100,
                 'resize' => 1,
                 'crop' => 1,
+            ),
+            array(
+                'path' => 'medium',
+                'width' => 196,
+                'height' => 154,
+                'resize' => 1,
+                'crop' => 1,
+            ),
+            array(
+                'path' => 'original',
+                'resize' => 0,
+                'crop' => 0,
             ),
         ),
         // Products images
         'catalog' => array(
             array(
                 'path' => 'small',
-                'width' => 60,
-                'height' => 60,
+                'width' => 125,
+                'height' => 99,
                 'resize' => 1,
                 'crop' => 1,
             ),
             array(
                 'path' => 'medium',
-                'width' => 232,
-                'height' => 195,
+                'width' => 196,
+                'height' => 154,
                 'resize' => 1,
                 'crop' => 1,
             ),
             array(
                 'path' => 'big',
-                'width' => 678,
-                'height' => 520,
+                'width' => 381,
+                'height' => 297,
                 'resize' => 1,
                 'crop' => 0,
             ),

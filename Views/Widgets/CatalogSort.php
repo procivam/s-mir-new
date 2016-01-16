@@ -1,3 +1,68 @@
+<div class="small_filter" id="catalogSort" data-uri="<?php echo str_replace( '/page/'.Core\Route::param('page'), '', Core\Arr::get($_SERVER, 'REQUEST_URI') ); ?>" data-get="<?php echo Core\Route::controller() == 'search' ? 'query='.Core\Arr::get($_GET, 'query') : ''; ?>">
+    <?php if(count($brands)): ?>
+        <table width="30%" border="0">
+            <tbody>
+                <tr>
+                    <td class="topblok1">
+                        <div class="rel"><a href="#" class="link"><span>Производитель</span></a>
+                            <br>
+                            <div class="window" style="display: none;">
+                                <ul>
+                                    <?php foreach($brands as $obj): ?>
+                                        <li>
+                                            <a href="?<?php echo 'brand='.$obj->alias.(Core\Arr::get($_GET, 'sort') ? '&sort='.$_GET['sort'] : '').(Core\Arr::get($_GET, 'at_page') ? '&at_page='.$_GET['at_page'] : ''); ?>"><?php echo $obj->name; ?></a>
+                                        </li>
+                                    <?php endforeach;
+                                    ?>
+                                </ul>
+                            </div>
+                        </div>
+                    </td>
+                    <td></td><td></td>
+                </tr>
+            </tbody>
+        </table>
+    <?php endif; ?>
+    <p class="byline"></p>
+    <table width="100%" border="0">
+        <tbody>
+            <tr>
+                <td class="sort1">Сортировать по: &nbsp;<span>Цене</span></td>
+                <td class="sort2">
+                    <a href="?<?php echo (Core\Arr::get($_GET, 'brand') ? 'brand='.$_GET['brand'].'&' : '').
+                        (Core\Arr::get($_GET, 'sort') ? 'sort='.$_GET['sort'].'&' : '').
+                        (Core\Arr::get($_GET, 'at_page') ? 'at_page='.$_GET['at_page'].'&' : ''); ?>" class="but_down"></a>
+                    <a href="?<?php echo (Core\Arr::get($_GET, 'brand') ? 'brand='.$_GET['brand'].'&' : '').
+                        (Core\Arr::get($_GET, 'sort') ? 'sort='.$_GET['sort'].'&' : '').
+                        (Core\Arr::get($_GET, 'at_page') ? 'at_page='.$_GET['at_page'].'&' : ''); ?>" class="but_down"" class="but_up"></a>
+                </td>
+
+                <td class="sort3">Рейтингу</td>
+                <td class="sort2">
+                    <a href="" class="but_down"></a>
+                    <a href="" class="but_up"></a>
+                </td>
+
+                <td class="sort5"><span>Наименованию</span></td>
+                <td class="sort2">
+                    <a href="?sort=name asc" class="but_down "></a>
+                    <a href="?sort=name desc" class="but_up "></a>
+                </td>
+                <td>
+                    <ul class="pagesort">
+                        <li class="active"><a href="?rows=9">9</a></li>
+                        <li><a href="?rows=12">12</a></li>
+                    </ul>
+                    <span class="srt">Показывать по:</span>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <p class="h50"></p>
+</div>
+
+
+
 <div class="small_filt" id="catalogSort" data-uri="<?php echo str_replace( '/page/'.Core\Route::param('page'), '', Core\Arr::get($_SERVER, 'REQUEST_URI') ); ?>" data-get="<?php echo Core\Route::controller() == 'search' ? 'query='.Core\Arr::get($_GET, 'query') : ''; ?>">
     <div class="small_filt1">
         <p>выводить ПО:</p>

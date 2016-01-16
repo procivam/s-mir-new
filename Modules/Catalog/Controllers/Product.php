@@ -13,7 +13,7 @@
 
         public function before() {
             parent::before();
-            $this->_template = 'Item';
+            $this->_template = 'Catalog';
         }
 
         // Show item inner page

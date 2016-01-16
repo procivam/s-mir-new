@@ -8,32 +8,33 @@
     <?php endforeach ?>
     <?php echo $GLOBAL_MESSAGE; ?>
 </head>
-<body>
-    <?php foreach ( $_seo['scripts']['body'] as $script ): ?>
-        <?php echo $script; ?>
-    <?php endforeach ?>
-    <div class="seoTxt" id="seoTxt">
-        <div class="wSize wTxt">
-            <?php echo $_content; ?>
+<body class="mainfon">
+    <div class="main">
+        <?php foreach ( $_seo['scripts']['body'] as $script ): ?>
+            <?php echo $script; ?>
+        <?php endforeach ?>
+        <div class="seoTxt" id="seoTxt">
+            <div class="wSize wTxt wrapper">
+                <?php echo $_content; ?>
+            </div>
         </div>
-    </div>
-    <div class="wWrapper">
+
         <?php echo Core\Widgets::get('Header', array('config' => $_config)); ?>
-        <div class="wConteiner">
-            <div class="wSize">
+
+        <div class="content clearfix">
+            <div class="wrapper">
                 <?php echo Core\Widgets::get('Index_Slider'); ?>
+
+                <?php echo Core\Widgets::get('Index_Groups'); ?>
+
                 <?php echo Core\Widgets::get('Index_Banners'); ?>
-                <?php echo Core\Widgets::get('Index_ItemsNew'); ?>
-                <?php echo Core\Widgets::get('VK'); ?>
-                <?php echo Core\Widgets::get('News'); ?>
-                <?php echo Core\Widgets::get('Articles'); ?>
-                <div class="clear"></div>
-                <?php echo Core\Widgets::get('Index_ItemsPopular'); ?>
+
+                <?php echo Core\Widgets::get('Index_News'); ?>
+
                 <div id="clonSeo"></div>
             </div>
         </div>
+        <?php echo Core\Widgets::get('Footer', array('counters' => Core\Arr::get($_seo, 'scripts')['counter'], 'config' => $_config)); ?>
     </div>
-    <?php echo Core\Widgets::get('HiddenData'); ?>
-    <?php echo Core\Widgets::get('Footer', array('counters' => Core\Arr::get($_seo, 'counters'), 'config' => $_config)); ?>
 </body>
 </html>

@@ -1,14 +1,15 @@
 <!DOCTYPE html>
 <html lang="ru-ru" dir="ltr">
 <!-- (c) студия Wezom | www.wezom.com.ua -->
-<head>  
+<head>
     <?php echo Core\Widgets::get('Head', $_seo); ?>
     <?php foreach ( $_seo['scripts']['head'] as $script ): ?>
         <?php echo $script; ?>
     <?php endforeach ?>
     <?php echo $GLOBAL_MESSAGE; ?>
 </head>
-<body>
+<body class="mainfon">
+<div class="main">
     <?php foreach ( $_seo['scripts']['body'] as $script ): ?>
         <?php echo $script; ?>
     <?php endforeach ?>
@@ -19,20 +20,23 @@
             </div>
         </div>
     <?php endif ?>
-    <div class="wWrapper">
-        <?php echo Core\Widgets::get('Header', array('config' => $_config)); ?>
-        <div class="wConteiner">
-            <div class="wSize">
+
+    <?php echo Core\Widgets::get('Header', array('config' => $_config)); ?>
+
+    <div class="content clearfix">
+        <div class="wrapper">
+            <div class="zag">
+                <h1><?php echo Core\Arr::get($_seo, 'h1'); ?></h1>
                 <?php echo $_breadcrumbs; ?>
-                <div class="<?php echo Core\Config::get('content_class'); ?>">
-                    <h1 class="title"><?php echo Core\Arr::get($_seo, 'h1'); ?></h1>
-                    <?php echo $_content; ?>
-                </div>
-                <div id="clonSeo"></div>
             </div>
+            <div class="wTxt">
+                <?php echo $_content; ?>
+            </div>
+
+            <div id="clonSeo"></div>
         </div>
     </div>
-    <?php echo Core\Widgets::get('HiddenData'); ?>
-    <?php echo Core\Widgets::get('Footer', array('counters' => Core\Arr::get($_seo, 'counters'), 'config' => $_config)); ?>
+    <?php echo Core\Widgets::get('Footer', array('counters' => Core\Arr::get($_seo, 'scripts')['counter'], 'config' => $_config)); ?>
+</div>
 </body>
 </html>

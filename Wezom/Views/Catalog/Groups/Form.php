@@ -57,9 +57,9 @@
                                 <div class="form-group">
                                     <label class="control-label">Обложка для списков</label>
                                     <div class="">
-                                        <?php if (is_file( HOST . Core\HTML::media('images/catalog_tree/'.$obj->image))): ?>
-                                            <a href="<?php echo Core\HTML::media('images/catalog_tree/'.$obj->image); ?>" rel="lightbox">
-                                                <img src="<?php echo Core\HTML::media('images/catalog_tree/'.$obj->image); ?>" />
+                                        <?php if (is_file( HOST . Core\HTML::media('images/catalog_tree/original/'.$obj->image))): ?>
+                                            <a href="<?php echo Core\HTML::media('images/catalog_tree/original/'.$obj->image); ?>" rel="lightbox">
+                                                <img src="<?php echo Core\HTML::media('images/catalog_tree/small/'.$obj->image); ?>" />
                                             </a>
                                             <br />
                                             <a class="otherLink" href="/wezom/<?php echo Core\Route::controller(); ?>/delete_image/<?php echo $obj->id; ?>" onclick="return confirm('Это действие удалит изображение безвозвратно. Продолжить?');">Удалить изображение</a>

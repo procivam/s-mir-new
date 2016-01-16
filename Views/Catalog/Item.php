@@ -1,105 +1,82 @@
-<div class="fll">
-    <div class="prevue_block clearFix">
-        <div class="fll">
-            <div class="prev3"><span></span></div>
-            <div class="next3"><span></span></div>
-            <ul>
-                <?php foreach( $images as $im ): ?>
-                    <?php if( is_file(HOST.Core\HTML::media('images/catalog/small/'.$im->image)) ): ?>
-                        <li>
-                            <div class="img_prevue" data-img-src="<?php echo Core\HTML::media('images/catalog/big/'.$im->image); ?>" data-img-src-original="<?php echo Core\HTML::media('images/catalog/original/'.$im->image); ?>">
-                                <img src="<?php echo \Core\ImageCache::factory()->cache(Core\HTML::media('images/catalog/small/'.$im->image)); ?>" />
-                            </div>
-                        </li>
-                    <?php endif; ?>
-                <?php endforeach; ?>
-            </ul>
-        </div>
-        <div class="prevue_block_in">
-            <div class="big_prevue fresco" data-fresco-group="gr1" href="<?php echo Core\HTML::media('images/catalog/original/'.$images[0]->image) ?>">
-                <?php if( is_file(HOST.Core\HTML::media('images/catalog/big/'.$images[0]->image)) ): ?>
-                    <img src="<?php echo Core\HTML::media('images/catalog/big/'.$images[0]->image); ?>" alt="" />
+<table width="100%" border="0">
+    <tbody><tr>
+        <td class="wh1 gallery">
+            <?php foreach( $images as $key => $im ): ?>
+                <?php if( !is_file(HOST.Core\HTML::media('images/catalog/big/'.$im->image))) continue; ?>
+                <?php if($key == 0): ?>
+                    <img src="<?php echo \Core\ImageCache::factory()->cache(Core\HTML::media('images/catalog/big/'.$im->image)); ?>" width="373" alt="<?php echo $obj->name; ?>"/>
                 <?php endif; ?>
-                <?php echo Core\Support::addItemTag($obj); ?>
-            </div>
-        </div>
-    </div>
-    <?php echo Core\Widgets::get('Socials'); ?>
-    <?php echo Core\Widgets::get('Item_Comments'); ?>
+                <a href="<?php echo Core\HTML::media('images/catalog/original/'.$im->image); ?>" rel="prettyPhoto[gallery1]">
+                    <img src="<?php echo \Core\ImageCache::factory()->cache(Core\HTML::media('images/catalog/small/'.$im->image)); ?>" width="125" alt="">
+                </a>
+            <?php endforeach; ?>
+        </td>
+        <td class="wh2">
+            <p class="bannazv5"><?php echo $obj->name; ?></p>
+            <?php if ($obj->sale): ?>
+                <div class="old_price2">
+                    <span><?php echo $obj->cost_old; ?></span> грн
+                </div>
+            <?php endif ?>
+            <p class="price"><b>грн..</b> <?php echo $obj->cost; ?>.- </p>
+            <p class="wline1"></p>
+            <a href="#" class="bye addToCart" data-id="<?php echo $obj->id; ?>">Купить</a>
+            <p class="otstup25"></p>
+        </td>
+    </tr>
+    </tbody></table>
+
+<p class="wline2"></p>
+
+<div class="tabshift">
+    <?php if(trim(strip_tags($obj->text))): ?>
+        <a rel="tabsulator1" href="javascript:void(0);">Описание</a>
+    <?php endif; ?>
+
+    <?php if(trim(strip_tags($obj->characteristics))): ?>
+        <a rel="tabsulator2" href="javascript:void(0);">Характеристики</a>
+    <?php endif; ?>
+
+    <?php if(trim(strip_tags($obj->gallery))): ?>
+        <a rel="tabsulator3" href="javascript:void(0);">Строчки</a>
+    <?php endif; ?>
+
+    <?php if(trim(strip_tags($obj->equipment))): ?>
+        <a rel="tabsulator4" href="javascript:void(0);">Комплектация</a>
+    <?php endif; ?>
 </div>
-<div class="flr">
-    <div class="tovar_info">
-        <div class="tovar_name"><h1><?php echo Core\Config::get('h1'); ?></h1></div>
-        <?php if ($obj->sale): ?>
-            <div class="old_price2">
-                <span><?php echo $obj->cost_old; ?></span> грн
-            </div>
-        <?php endif ?>
-        <div class="tovar_price">
-            <?php echo $obj->cost; ?> <span>грн</span>
-        </div>
-        <?php if( $obj->available == 0 ): ?>
-            <div class="tovar_vNall">
-                <p>товара нет в наличии</p>
-            </div>
-        <?php endif; ?>
-        <?php if( $obj->available == 1 ): ?>
-            <div class="tovar_vNall">
-                <div class="vNall_img"></div>
-                <p>товар в наличии</p>
-                <p><?php echo Core\Config::get('static.dostavka_est'); ?></p>
-            </div>
-        <?php endif; ?>
-        <?php if( $obj->available == 2 ): ?>
-            <div class="tovar_vNall noNall">
-                <div class="vNall_img"></div>
-                <p>товар под заказ</p>
-                <?php echo Core\Config::get('static.dostavka_bron'); ?>
-            </div>
-        <?php endif; ?>
-        <div class="sel_but clearFix">
-            <div class="fll"></div>
-            <div class="flr">
-                <a href="#" class="buy_but addToCart" data-id="<?php echo $obj->id; ?>"><span>В КОРЗИНУ</span></a>
-                <a href="#enterReg5" class="popup_but enterReg5" data-id="<?php echo $obj->id; ?>"><span>КУПИТЬ В ОДИН КЛИК</span></a>
-            </div>
-        </div>
+
+
+<?php if(trim(strip_tags($obj->text))): ?>
+    <div class="tabsulators" id="tabsulator1">
+        <?php echo $obj->text; ?>
     </div>
-    <div class="tovar_info2">
-        <div class="middle_title">характеристики товара</div>
-        <div class="har_table">
-            <table>
-                <?php if( $obj->artikul ): ?>
-                    <tr>
-                        <td>артикул</td>
-                        <td><?php echo $obj->artikul; ?></td>
-                    </tr>
-                <?php endif; ?>
-                <?php if( $obj->brand_name ): ?>
-                    <tr>
-                        <td>бренд</td>
-                        <td><a href="<?php echo Core\HTML::link('brands/'.$obj->brand_alias); ?>"><?php echo $obj->brand_name; ?></a></td>
-                    </tr>
-                <?php endif; ?>
-                <?php if( $obj->model_name ): ?>
-                    <tr>
-                        <td>модель</td>
-                        <td><?php echo $obj->model_name; ?></td>
-                    </tr>
-                <?php endif; ?>
-                <tr>
-                    <td>пол</td>
-                    <td><?php echo $obj->sex == 2 ? 'Унисекс' : ( $obj->sex ? 'Женская модель' : 'Мужская модель' ); ?></td>
-                </tr>
-                <?php foreach ($specifications as $name => $value): ?>
-                    <tr>
-                        <td><?php echo $name; ?></td>
-                        <td><?php echo $value; ?></td>
-                    </tr>
-                <?php endforeach ?>
-            </table>
-        </div>
-        <?php echo Core\Widgets::get('Item_InfoItemPage'); ?>
-        <?php echo Core\Widgets::get('Item_QuestionAboutItem'); ?>
+<?php endif; ?>
+
+<?php if(trim(strip_tags($obj->characteristics))): ?>
+    <div class="tabsulators" id="tabsulator2">
+        <?php echo $obj->characteristics; ?>
     </div>
-</div>
+<?php endif; ?>
+
+<?php if(trim(strip_tags($obj->gallery))): ?>
+    <div class="tabsulators" id="tabsulator3" style="display:none;">
+        <?php echo $obj->gallery; ?>
+    </div>
+<?php endif; ?>
+
+<?php if(trim(strip_tags($obj->equipment))): ?>
+    <div class="tabsulators" id="tabsulator4" style="display:none;">
+        <?php echo $obj->equipment; ?>
+    </div>
+<?php endif; ?>
+
+<script>
+    $(function(){
+        var rel = $('.tabshift a:first').addClass('active').attr('rel');
+        $('.tabsulators').hide();
+        $('#'+rel).show();
+    });
+</script>
+
+<?php echo Core\Widgets::get('Item_SocialReviews'); ?>

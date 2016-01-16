@@ -190,6 +190,7 @@
             $result = DB::select('image')
                 ->from(static::$tableImages)
                 ->where(static::$tableImages.'.catalog_id', '=', $item_id)
+                ->order_by(static::$tableImages.'.main', 'DESC')
                 ->order_by(static::$tableImages.'.sort');
             return $result->find_all();
         }

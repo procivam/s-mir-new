@@ -3,7 +3,7 @@
         <?php if ( is_file( HOST.Core\HTML::media('images/news/big/'.$obj->image)) ): ?>
             <div class="fll">
                 <a href="<?php echo Core\HTML::link('news/'.$obj->alias); ?>" class="news_img">
-                    <img src="<?php echo Core\HTML::media('images/news/big/'.$obj->image); ?>" alt="" />
+                    <img src="<?php echo Core\HTML::media('images/news/small/'.$obj->image); ?>" alt="" />
                 </a>
             </div>
         <?php endif ?>

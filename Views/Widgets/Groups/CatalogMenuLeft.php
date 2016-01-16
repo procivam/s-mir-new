@@ -1,17 +1,23 @@
-<div class="accordeon">
-    <ul>
-        <?php foreach( $result[0] as $main ): ?>
-            <li>
-                <a href="<?php echo Core\HTML::link('products/'.$main->alias); ?>" class="cat_raz_name"><?php echo $main->name; ?></a>
-                <?php if( isset($result[$main->id]) ): ?>
-                    <span><?php echo $main->id == $root ? '-' : '+'; ?></span>
-                    <ul class="<?php echo $main->id == $root ? 'show_acc' : ''; ?>">
-                        <?php foreach( $result[$main->id] as $obj ): ?>
-                            <li><a href="<?php echo Core\HTML::link('products/'.$obj->alias); ?>"><?php echo $obj->name; ?></a></li>
-                        <?php endforeach; ?>
-                    </ul>
-                <?php endif ?>
-            </li>
+<table width="100%" border="0" class="leftmen">
+    <tbody>
+        <?php foreach ($result as $obj): ?>
+            <tr>
+                <td class="leftmen1">
+                    <a href="<?php echo Core\HTML::link('products/'.$obj->alias); ?>">
+                        <?php if(is_file(HOST.Core\HTML::media('images/catalog_tree/small/'.$obj->image))): ?>
+                            <img src="<?php echo Core\HTML::media('images/catalog_tree/small/'.$obj->image); ?>"
+                                 alt="<?php echo $obj->name; ?>" title="<?php echo $obj->name; ?>">
+                        <?php else: ?>
+                            <img src="<?php echo Core\HTML::media('pic/no-image-catalog_tree-small.png'); ?>">
+                        <?php endif; ?>
+                    </a>
+                </td>
+                <td class="leftmen2">
+                    <a href="<?php echo Core\HTML::link('products/'.$obj->alias); ?>">
+                        <span style="width:130px;"><?php echo $obj->name; ?></span>
+                    </a>
+                </td>
+            </tr>
         <?php endforeach; ?>
-    </ul>
-</div>
+    </tbody>
+</table>
