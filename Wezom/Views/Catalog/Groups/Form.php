@@ -139,18 +139,18 @@
                             </div>
                         </div>
                     </div>
-                    <div class="form-group">
-                        <label class="control-label" for="f_chars">Характеристики</label>
-                        <div class="multiSelectBlock">
-                            <div class="controls">
-                                <select class="form-control" id="f_chars" name="SPEC[]" multiple>
-                                    <?php foreach( $specifications as $spec ): ?>
-                                        <option value="<?php echo $spec->id; ?>" <?php echo in_array($spec->id, $groupSpec) ? 'selected' : ''; ?>><?php echo $spec->name; ?></option>
-                                    <?php endforeach; ?>
-                                </select>
-                            </div>
-                        </div>
-                    </div>
+<!--                    <div class="form-group">-->
+<!--                        <label class="control-label" for="f_chars">Характеристики</label>-->
+<!--                        <div class="multiSelectBlock">-->
+<!--                            <div class="controls">-->
+<!--                                <select class="form-control" id="f_chars" name="SPEC[]" multiple>-->
+<!--                                    --><?php //foreach( $specifications as $spec ): ?>
+<!--                                        <option value="--><?php //echo $spec->id; ?><!--" --><?php //echo in_array($spec->id, $groupSpec) ? 'selected' : ''; ?><!--><?php //echo $spec->name; ?><!--</option>-->
+<!--                                    --><?php //endforeach; ?>
+<!--                                </select>-->
+<!--                            </div>-->
+<!--                        </div>-->
+<!--                    </div>-->
                 </div>
             </div>
         </div>

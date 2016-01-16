@@ -2,7 +2,7 @@
     <div class="form-actions" style="display: none;">
         <input class="submit btn btn-primary pull-right" type="submit" value="Отправить">
     </div>
-    <div class="col-md-7">
+    <div class="col-md-8">
         <div class="widget box">
             <div class="widgetContent">
                 <div class="form-vertical row-border">
@@ -25,32 +25,32 @@
                                                 </label>
                                             </div>
                                         </div>
-                                        <div class="col-md-4">
-                                            <label class="control-label">Новинка</label>
-                                            <div class="">
-                                                <label class="checkerWrap-inline">
-                                                    <input name="new" value="0" type="radio" <?php echo !$obj->new ? 'checked' : ''; ?>>
-                                                    Нет
-                                                </label>
-                                                <label class="checkerWrap-inline">
-                                                    <input name="new" value="1" type="radio" <?php echo $obj->new ? 'checked' : ''; ?>>
-                                                    Да
-                                                </label>
-                                            </div>
-                                        </div>
-                                        <div class="col-md-4">
-                                            <label class="control-label">Популярный товар</label>
-                                            <div class="">
-                                                <label class="checkerWrap-inline">
-                                                    <input name="top" value="0" type="radio" <?php echo !$obj->top ? 'checked' : ''; ?>>
-                                                    Нет
-                                                </label>
-                                                <label class="checkerWrap-inline">
-                                                    <input name="top" value="1" type="radio" <?php echo $obj->top ? 'checked' : ''; ?>>
-                                                    Да
-                                                </label>
-                                            </div>
-                                        </div>
+<!--                                        <div class="col-md-4">-->
+<!--                                            <label class="control-label">Новинка</label>-->
+<!--                                            <div class="">-->
+<!--                                                <label class="checkerWrap-inline">-->
+<!--                                                    <input name="new" value="0" type="radio" --><?php //echo !$obj->new ? 'checked' : ''; ?><!---->
+<!--                                                    Нет-->
+<!--                                                </label>-->
+<!--                                                <label class="checkerWrap-inline">-->
+<!--                                                    <input name="new" value="1" type="radio" --><?php //echo $obj->new ? 'checked' : ''; ?><!---->
+<!--                                                    Да-->
+<!--                                                </label>-->
+<!--                                            </div>-->
+<!--                                        </div>-->
+<!--                                        <div class="col-md-4">-->
+<!--                                            <label class="control-label">Популярный товар</label>-->
+<!--                                            <div class="">-->
+<!--                                                <label class="checkerWrap-inline">-->
+<!--                                                    <input name="top" value="0" type="radio" --><?php //echo !$obj->top ? 'checked' : ''; ?><!---->
+<!--                                                    Нет-->
+<!--                                                </label>-->
+<!--                                                <label class="checkerWrap-inline">-->
+<!--                                                    <input name="top" value="1" type="radio" --><?php //echo $obj->top ? 'checked' : ''; ?><!---->
+<!--                                                    Да-->
+<!--                                                </label>-->
+<!--                                            </div>-->
+<!--                                        </div>-->
                                     </div>
                                 </div>
                                 <div class="form-group">
@@ -80,12 +80,12 @@
                                         </div>
                                     </div>
                                 </div>
-                                <div class="form-group">
-                                    <label class="control-label" for="f_artikul">Артикул</label>
-                                    <div class="">
-                                        <input class="form-control" id="f_artikul" name="FORM[artikul]" type="text" value="<?php echo $obj->artikul; ?>" />
-                                    </div>
-                                </div>
+<!--                                <div class="form-group">-->
+<!--                                    <label class="control-label" for="f_artikul">Артикул</label>-->
+<!--                                    <div class="">-->
+<!--                                        <input class="form-control" id="f_artikul" name="FORM[artikul]" type="text" value="--><?php //echo $obj->artikul; ?><!--" />-->
+<!--                                    </div>-->
+<!--                                </div>-->
                                 <div class="form-group">
                                     <label class="control-label" for="f_name">Название</label>
                                     <div class="">
@@ -106,38 +106,38 @@
                                         </div>
                                     </div>
                                 </div>
-                                <div class="form-group">
-                                    <div class="col-md-3">
-                                        <label class="control-label">Акция</label>
-                                        <div class="">
-                                            <label class="checkerWrap-inline">
-                                                <input name="sale" value="0" type="radio" <?php echo !$obj->sale ? 'checked' : ''; ?>>
-                                                Нет
-                                            </label>
-                                            <label class="checkerWrap-inline">
-                                                <input name="sale" value="1" type="radio" <?php echo $obj->sale ? 'checked' : ''; ?>>
-                                                Да
-                                            </label>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-9">
-                                        <label class="control-label">Наличие</label>
-                                        <div class="">
-                                            <label class="checkerWrap-inline">
-                                                <input name="available" value="0" type="radio" <?php echo ($obj && $obj->available == 0) ? 'checked' : ''; ?>>
-                                                Нет в наличии
-                                            </label>
-                                            <label class="checkerWrap-inline">
-                                                <input name="available" value="1" type="radio" <?php echo (!$obj || $obj->available == 1) ? 'checked' : ''; ?>>
-                                                Есть в наличии
-                                            </label>
-                                            <label class="checkerWrap-inline">
-                                                <input name="available" value="2" type="radio" <?php echo ($obj && $obj->available == 2) ? 'checked' : ''; ?>>
-                                                Под заказ
-                                            </label>
-                                        </div>
-                                    </div>
-                                </div>
+<!--                                <div class="form-group">-->
+<!--                                    <div class="col-md-3">-->
+<!--                                        <label class="control-label">Акция</label>-->
+<!--                                        <div class="">-->
+<!--                                            <label class="checkerWrap-inline">-->
+<!--                                                <input name="sale" value="0" type="radio" --><?php //echo !$obj->sale ? 'checked' : ''; ?><!--->
+<!--                                                Нет-->
+<!--                                            </label>-->
+<!--                                            <label class="checkerWrap-inline">-->
+<!--                                                <input name="sale" value="1" type="radio" --><?php //echo $obj->sale ? 'checked' : ''; ?><!---->
+<!--                                                Да-->
+<!--                                            </label>-->
+<!--                                        </div>-->
+<!--                                    </div>-->
+<!--                                    <div class="col-md-9">-->
+<!--                                        <label class="control-label">Наличие</label>-->
+<!--                                        <div class="">-->
+<!--                                            <label class="checkerWrap-inline">-->
+<!--                                                <input name="available" value="0" type="radio" --><?php //echo ($obj && $obj->available == 0) ? 'checked' : ''; ?><!---->
+<!--                                                Нет в наличии-->
+<!--                                            </label>-->
+<!--                                            <label class="checkerWrap-inline">-->
+<!--                                                <input name="available" value="1" type="radio" --><?php //echo (!$obj || $obj->available == 1) ? 'checked' : ''; ?><!---->
+<!--                                                Есть в наличии-->
+<!--                                            </label>-->
+<!--                                            <label class="checkerWrap-inline">-->
+<!--                                                <input name="available" value="2" type="radio" --><?php //echo ($obj && $obj->available == 2) ? 'checked' : ''; ?><!---->
+<!--                                                Под заказ-->
+<!--                                            </label>-->
+<!--                                        </div>-->
+<!--                                    </div>-->
+<!--                                </div>-->
                                 <div class="form-group costField">
                                     <label class="control-label" for="f_cost">Цена</label>
                                     <div class="">
@@ -218,7 +218,7 @@
             </div>
         </div>
     </div>
-    <div class="col-md-5">
+    <div class="col-md-4">
         <div class="widget">
             <div class="widgetHeader myWidgetHeader">
                 <div class="widgetTitle">
@@ -240,54 +240,54 @@
                         </div>
                     </div>
                 </div>
-                <div class="form-group">
-                    <label class="control-label" for="model_alias">Модель</label>
-                    <div class="">
-                        <div class="controls">
-                            <select class="form-control" id="model_alias" name="FORM[model_alias]">
-                                <option value="0">Нет</option>
-                                <?php foreach( $models as $model ): ?>
-                                    <option value="<?php echo $model->alias; ?>" <?php echo $model->alias == $obj->model_alias ? 'selected' : ''; ?>><?php echo $model->name; ?></option>
-                                <?php endforeach; ?>
-                            </select>
-                        </div>
-                    </div>
-                </div>
-                <div class="form-vertical row-border" id="specGroup">
-                    <?php foreach ($specifications as $spec): ?>
-                        <?php if (count($specValues[$spec->id])): ?>
-                            <div class="form-group">
-                                <label class="control-label"><?php echo $spec->name; ?></label>
-                                <div class="<?php echo $spec->type_id == 3 ? 'multiSelectBlock' : NULL; ?>">
-                                    <div class="controls">
-                                        <?php if ($spec->type_id == 3): ?>
-                                            <select class="form-control" name="SPEC[<?php echo $spec->alias; ?>][]" multiple>
-                                                <?php foreach( $specValues[$spec->id] as $value ): ?>
-                                                    <option value="<?php echo $value->alias; ?>" <?php echo (isset($specArray[$spec->alias]) AND in_array($value->alias, $specArray[$spec->alias])) ? 'selected' : ''; ?>><?php echo $value->name; ?></option>
-                                                <?php endforeach; ?>
-                                            </select>
-                                        <?php endif ?>
-                                        <?php if ($spec->type_id == 2 OR $spec->type_id == 1): ?>
-                                            <select class="form-control" name="SPEC[<?php echo $spec->alias; ?>]">
-                                                <option value="0">Нет</option>
-                                                <?php foreach( $specValues[$spec->id] as $value ): ?>
-                                                    <option value="<?php echo $value->alias; ?>" <?php echo (isset($specArray[$spec->alias]) AND $specArray[$spec->alias] == $value->alias) ? 'selected' : ''; ?>><?php echo $value->name; ?></option>
-                                                <?php endforeach; ?>
-                                            </select>
-                                        <?php endif ?>
-                                    </div>
-                                </div>
-                            </div>
-                        <?php endif ?>
-                    <?php endforeach ?>
-                </div>
+<!--                <div class="form-group">-->
+<!--                    <label class="control-label" for="model_alias">Модель</label>-->
+<!--                    <div class="">-->
+<!--                        <div class="controls">-->
+<!--                            <select class="form-control" id="model_alias" name="FORM[model_alias]">-->
+<!--                                <option value="0">Нет</option>-->
+<!--                                --><?php //foreach( $models as $model ): ?>
+<!--                                    <option value="--><?php //echo $model->alias; ?><!--" --><?php //echo $model->alias == $obj->model_alias ? 'selected' : ''; ?><!-- --><?php //echo $model->name; ?><!--</option>-->
+<!--                                --><?php //endforeach; ?>
+<!--                            </select>-->
+<!--                        </div>-->
+<!--                    </div>-->
+<!--                </div>-->
+<!--                <div class="form-vertical row-border" id="specGroup">-->
+<!--                    --><?php //foreach ($specifications as $spec): ?>
+<!--                        --><?php //if (count($specValues[$spec->id])): ?>
+<!--                            <div class="form-group">-->
+<!--                                <label class="control-label">--><?php //echo $spec->name; ?><!--</label>-->
+<!--                                <div class="--><?php //echo $spec->type_id == 3 ? 'multiSelectBlock' : NULL; ?><!--">-->
+<!--                                    <div class="controls">-->
+<!--                                        --><?php //if ($spec->type_id == 3): ?>
+<!--                                            <select class="form-control" name="SPEC[--><?php //echo $spec->alias; ?><!--][]" multiple>-->
+<!--                                                --><?php //foreach( $specValues[$spec->id] as $value ): ?>
+<!--                                                    <option value="--><?php //echo $value->alias; ?><!--" --><?php //echo (isset($specArray[$spec->alias]) AND in_array($value->alias, $specArray[$spec->alias])) ? 'selected' : ''; ?><!-- --><?php //echo $value->name; ?><!--</option>-->
+<!--                                                --><?php //endforeach; ?>
+<!--                                            </select>-->
+<!--                                        --><?php //endif ?>
+<!--                                        --><?php //if ($spec->type_id == 2 OR $spec->type_id == 1): ?>
+<!--                                            <select class="form-control" name="SPEC[--><?php //echo $spec->alias; ?><!--]">-->
+<!--                                                <option value="0">Нет</option>-->
+<!--                                                --><?php //foreach( $specValues[$spec->id] as $value ): ?>
+<!--                                                    <option value="--><?php //echo $value->alias; ?><!--" --><?php //echo (isset($specArray[$spec->alias]) AND $specArray[$spec->alias] == $value->alias) ? 'selected' : ''; ?><!-- --><?php //echo $value->name; ?><!--</option>-->
+<!--                                                --><?php //endforeach; ?>
+<!--                                            </select>-->
+<!--                                        --><?php //endif ?>
+<!--                                    </div>-->
+<!--                                </div>-->
+<!--                            </div>-->
+<!--                        --><?php //endif ?>
+<!--                    --><?php //endforeach ?>
+<!--                </div>-->
             </div>
         </div>
     </div>
 </form>
 
 <?php echo $uploader; ?>
-<?php echo $related; ?>
+<?php #echo $related; ?>
 
 <script>
     $(function(){

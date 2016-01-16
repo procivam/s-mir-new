@@ -17,7 +17,7 @@
             </div>
         </div>
     <?php endif; ?>
-    <?php if( \Core\User::get_access_for_controller('comments') != 'no' || \Core\User::god() ): ?>
+    <?php if( \Core\User::get_access_for_controller('comments') != 'no' || \Core\User::god() AND false): ?>
         <div class="col-sm-6 col-md-3">
             <div class="statbox widget box box-shadow">
                 <div class="widgetContent">
@@ -53,7 +53,7 @@
             </div>
         </div>
     <?php endif; ?>
-    <?php if( \Core\User::get_access_for_controller('users') != 'no' || \Core\User::god() ): ?>
+    <?php if( \Core\User::get_access_for_controller('users') != 'no' || \Core\User::god() AND false ): ?>
         <div class="col-sm-6 col-md-3">
             <div class="statbox widget box box-shadow">
                 <div class="widgetContent">

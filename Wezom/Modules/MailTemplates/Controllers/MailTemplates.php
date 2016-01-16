@@ -8,6 +8,7 @@
     use Core\HTTP;
     use Core\Common;
     use Core\View;
+    use Core\QB\DB;
 
     class MailTemplates extends \Wezom\Modules\Base {
 
@@ -23,7 +24,7 @@
         }
 
         function indexAction () {
-            $result = $this->model->getRows(NULL, 'sort', 'ASC');
+            $result = DB::select()->from('mail_templates')->where('show', '=', 1)->order_by('sort')->find_all();
             $this->_filter = Widgets::get( 'Filter_Pages' );
             $this->_toolbar = Widgets::get( 'Toolbar_List' );
             $this->_content = View::tpl(

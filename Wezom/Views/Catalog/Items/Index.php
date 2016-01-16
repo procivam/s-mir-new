@@ -3,14 +3,14 @@
         <div class="widget">
             <div class="widgetHeader filterForm" style="padding-bottom: 10px;">
                 <form class="widgetContent" action="/wezom/<?php echo Core\Route::controller(); ?>/index" method="get">
-                    <div class="col-md-2">
-                        <label class="control-label">Артикул</label>
-                        <div class="">
-                            <div class="controls">
-                                <input name="artikul" class="form-control" value="<?php echo Core\Arr::get($_GET, 'artikul', NULL); ?>">
-                            </div>
-                        </div>
-                    </div>
+<!--                    <div class="col-md-2">-->
+<!--                        <label class="control-label">Артикул</label>-->
+<!--                        <div class="">-->
+<!--                            <div class="controls">-->
+<!--                                <input name="artikul" class="form-control" value="--><?php //echo Core\Arr::get($_GET, 'artikul', NULL); ?><!--">-->
+<!--                            </div>-->
+<!--                        </div>-->
+<!--                    </div>-->
                     <div class="col-md-2">
                         <label class="control-label">Наименование</label>
                         <div class="">
