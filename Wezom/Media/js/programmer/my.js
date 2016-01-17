@@ -382,7 +382,7 @@ $(document).ready(function(){
                 },
                 success: function(data){
                     if(data.success) {
-                        generate('E-Mail спешно отправлен заказчику!', 'success', 5000);
+                        generate('E-Mail успешно отправлен заказчику!', 'success', 5000);
                         $('#sendEmail').addClass('hide');
                     } else {
                         if(data.response) {

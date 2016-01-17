@@ -44,7 +44,7 @@
                     );
                 }
             }
-            $this->success(array('cart' => $cart));
+            $this->success(array('cart' => $cart, 'response' => 'Вы успешно добавили товар в корзину'));
         }
 
 

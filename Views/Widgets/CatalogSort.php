@@ -1,123 +1,89 @@
-<div class="small_filter" id="catalogSort" data-uri="<?php echo str_replace( '/page/'.Core\Route::param('page'), '', Core\Arr::get($_SERVER, 'REQUEST_URI') ); ?>" data-get="<?php echo Core\Route::controller() == 'search' ? 'query='.Core\Arr::get($_GET, 'query') : ''; ?>">
-    <?php if(count($brands)): ?>
-        <table width="30%" border="0">
+<form action="" method="get" class="products-filter">
+    <div class="small_filter" id="catalogSort" data-uri="<?php echo str_replace( '/page/'.Core\Route::param('page'), '', Core\Arr::get($_SERVER, 'REQUEST_URI') ); ?>" data-get="<?php echo Core\Route::controller() == 'search' ? 'query='.Core\Arr::get($_GET, 'query') : ''; ?>">
+        <?php if(count($brands)): ?>
+            <table width="30%" border="0">
+                <tbody>
+                    <tr>
+                        <td class="topblok1">
+                            <div class="rel"><a href="#" class="link"><span>Производитель</span></a>
+                                <br>
+                                <div class="window" style="display: none;">
+                                    <ul>
+                                        <?php foreach($brands as $obj): ?>
+                                            <li>
+                                                <label for="brand-<?php echo $obj->alias ?>"><?php echo $obj->name; ?>
+                                                    <input type="radio" name="brand" value="<?php echo $obj->alias; ?>"
+                                                       id="brand-<?php echo $obj->alias ?>"
+                                                        <?php echo isset($_GET['brand']) && $_GET['brand'] == $obj->alias ? 'checked' : null ?>>
+                                                </label>
+                                            </li>
+                                        <?php endforeach;
+                                        ?>
+                                    </ul>
+                                </div>
+                            </div>
+                        </td>
+                        <td></td><td></td>
+                    </tr>
+                </tbody>
+            </table>
+        <?php endif; ?>
+        <p class="byline"></p>
+        <table width="100%" border="0">
             <tbody>
                 <tr>
-                    <td class="topblok1">
-                        <div class="rel"><a href="#" class="link"><span>Производитель</span></a>
-                            <br>
-                            <div class="window" style="display: none;">
-                                <ul>
-                                    <?php foreach($brands as $obj): ?>
-                                        <li>
-                                            <a href="?<?php echo 'brand='.$obj->alias.(Core\Arr::get($_GET, 'sort') ? '&sort='.$_GET['sort'] : '').(Core\Arr::get($_GET, 'at_page') ? '&at_page='.$_GET['at_page'] : ''); ?>"><?php echo $obj->name; ?></a>
-                                        </li>
-                                    <?php endforeach;
-                                    ?>
-                                </ul>
-                            </div>
-                        </div>
+                    <td class="sort1">Сортировать по: &nbsp;<span>Цене</span></td>
+                    <td class="sort2">
+                        <label class="but_down <?php echo !isset($_GET['sort']) || $_GET['sort'] == 'price-desc' ? 'active' : null ?>"
+                               for="price-desc">
+                            <input type="radio" name="sort" value="price-desc" id="price-desc" <?php echo isset($_GET['sort']) && $_GET['sort'] == 'price-desc' ? 'checked' : null ?>">
+                        </label>
+                        <label class="but_up <?php echo isset($_GET['sort']) && $_GET['sort'] == 'price-asc' ? 'active' : null ?>" for="price-asc">
+                            <input type="radio" name="sort" value="price-asc" id="price-asc" <?php echo isset($_GET['sort']) && $_GET['sort'] == 'price-asc' ? 'checked' : null ?>>
+                        </label>
                     </td>
-                    <td></td><td></td>
+
+                    <td class="sort5"><span>Наименованию</span></td>
+                    <td class="sort2">
+                        <label class="but_down <?php echo isset($_GET['sort']) && $_GET['sort'] == 'name-asc' ? 'active' : null ?>" for="name-asc">
+                            <input type="radio" name="sort" value="name-asc" id="name-asc" <?php echo isset($_GET['sort']) && $_GET['sort'] == 'name-asc' ? 'checked' : null ?>>
+                        </label>
+                        <label class="but_up <?php echo isset($_GET['sort']) && $_GET['sort'] == 'name-desc' ? 'active' : null ?>" for="name-desc">
+                            <input type="radio" name="sort" value="name-desc" id="name-desc" <?php echo isset($_GET['sort']) && $_GET['sort'] == 'name-desc' ? 'checked' : null ?>>
+                        </label>
+                    </td>
+                    <td>
+                        <ul class="pagesort">
+                            <li class="<?php echo !isset($_GET['at-page']) || Core\Config::get('basic.limit') == $_GET['at-page'] ? 'active' : null ?>">
+                                <label  for="at-page-<?php echo Core\Config::get('basic.limit')?>">
+                                    <?php echo Core\Config::get('basic.limit')?>
+                                    <input type="radio" name="at-page" value="<?php echo Core\Config::get('basic.limit')?>"
+                                           id="at-page-<?php echo Core\Config::get('basic.limit')?>"
+                                        <?php echo isset($_GET['at-page']) && $_GET['at-page'] == Core\Config::get('basic.limit') ? 'checked' : null ?>>
+                                </label>
+                            </li>
+                            <li class="<?php echo isset($_GET['at-page']) && Core\Config::get('basic.limit')*2 == $_GET['at-page'] ? 'active' : null ?>">
+                                <label for="at-page-<?php echo Core\Config::get('basic.limit')*2?>">
+                                    <?php echo Core\Config::get('basic.limit')*2?>
+                                    <input type="radio" name="at-page" value="<?php echo Core\Config::get('basic.limit')*2?>"
+                                           id="at-page-<?php echo Core\Config::get('basic.limit')*2?>"
+                                        <?php echo isset($_GET['at-page']) && $_GET['at-page'] == Core\Config::get('basic.limit')*2 ? 'checked' : null ?>>
+                                </label>
+                            </li>
+                        </ul>
+                        <span class="srt">Показывать по:</span>
+                    </td>
                 </tr>
             </tbody>
         </table>
-    <?php endif; ?>
-    <p class="byline"></p>
-    <table width="100%" border="0">
-        <tbody>
-            <tr>
-                <td class="sort1">Сортировать по: &nbsp;<span>Цене</span></td>
-                <td class="sort2">
-                    <a href="?<?php echo (Core\Arr::get($_GET, 'brand') ? 'brand='.$_GET['brand'].'&' : '').
-                        (Core\Arr::get($_GET, 'sort') ? 'sort='.$_GET['sort'].'&' : '').
-                        (Core\Arr::get($_GET, 'at_page') ? 'at_page='.$_GET['at_page'].'&' : ''); ?>" class="but_down"></a>
-                    <a href="?<?php echo (Core\Arr::get($_GET, 'brand') ? 'brand='.$_GET['brand'].'&' : '').
-                        (Core\Arr::get($_GET, 'sort') ? 'sort='.$_GET['sort'].'&' : '').
-                        (Core\Arr::get($_GET, 'at_page') ? 'at_page='.$_GET['at_page'].'&' : ''); ?>" class="but_down"" class="but_up"></a>
-                </td>
-
-                <td class="sort3">Рейтингу</td>
-                <td class="sort2">
-                    <a href="" class="but_down"></a>
-                    <a href="" class="but_up"></a>
-                </td>
-
-                <td class="sort5"><span>Наименованию</span></td>
-                <td class="sort2">
-                    <a href="?sort=name asc" class="but_down "></a>
-                    <a href="?sort=name desc" class="but_up "></a>
-                </td>
-                <td>
-                    <ul class="pagesort">
-                        <li class="active"><a href="?rows=9">9</a></li>
-                        <li><a href="?rows=12">12</a></li>
-                    </ul>
-                    <span class="srt">Показывать по:</span>
-                </td>
-            </tr>
-        </tbody>
-    </table>
-    <p class="h50"></p>
-</div>
-
-
-
-<div class="small_filt" id="catalogSort" data-uri="<?php echo str_replace( '/page/'.Core\Route::param('page'), '', Core\Arr::get($_SERVER, 'REQUEST_URI') ); ?>" data-get="<?php echo Core\Route::controller() == 'search' ? 'query='.Core\Arr::get($_GET, 'query') : ''; ?>">
-    <div class="small_filt1">
-        <p>выводить ПО:</p>
-        <select name="per_page" id="select1">
-            <?php $limit = Core\Config::get('basic.limit'); ?>
-            <?php for( $i = Core\Config::get('basic.limit'); $i < Core\Config::get('basic.limit') * 5; $i += Core\Config::get('basic.limit') ): ?>
-                <option value="<?php echo $i; ?>" <?php echo Core\Arr::get($_GET, 'per_page') == $i ? 'selected' : ''; ?>><?php echo $i; ?></option>
-            <?php endfor; ?>
-        </select>
-        <p>на странице</p>
+        <p class="h50"></p>
     </div>
-    <div class="small_filt2">
-        <p>сортировать:</p>
-        <select name="sort" id="select2">
-            <option value="">Не сортировать</option>
-            <option value="cost" data-type="desc" <?php echo (Core\Arr::get($_GET, 'sort') == 'cost' AND Core\Arr::get($_GET, 'type') == 'desc') ? 'selected' : ''; ?>>От дорогих к бютжетным</option>
-            <option value="cost" data-type="asc" <?php echo (Core\Arr::get($_GET, 'sort') == 'cost' AND Core\Arr::get($_GET, 'type') == 'asc') ? 'selected' : ''; ?>>От бютжетных к дорогим</option>
-            <option value="created_at" data-type="desc" <?php echo (Core\Arr::get($_GET, 'sort') == 'created_at' AND Core\Arr::get($_GET, 'type') == 'desc') ? 'selected' : ''; ?>>От новых моделей к старым</option>
-            <option value="created_at" data-type="asc" <?php echo (Core\Arr::get($_GET, 'sort') == 'created_at' AND Core\Arr::get($_GET, 'type') == 'asc') ? 'selected' : ''; ?>>От старых моделей к новым</option>
-            <option value="name" data-type="asc" <?php echo (Core\Arr::get($_GET, 'sort') == 'name' AND Core\Arr::get($_GET, 'type') == 'asc') ? 'selected' : ''; ?>>По названию от А до Я</option>
-            <option value="name" data-type="desc" <?php echo (Core\Arr::get($_GET, 'sort') == 'name' AND Core\Arr::get($_GET, 'type') == 'desc') ? 'selected' : ''; ?>>По названию от Я до А</option>
-        </select>
-    </div>
-</div>
+</form>
 
 <script>
     $(function(){
-        $('#catalogSort select').on('change', function(){
-            // Get clear uri
-            var uri = $('#catalogSort').data('uri');
-            arr = uri.split('?');
-            uri = arr[0];
-            // Get parameter for search controller
-            var old = $('#catalogSort').data('get');
-            // Create get parameters
-            var get = [];
-            if (old) {
-                get.push(old);
-            }
-            $('#catalogSort select').each(function(){
-                if( $(this).attr('name') == 'per_page' ) {
-                    get.push('per_page=' + $(this).val());
-                }
-                if( $(this).attr('name') == 'sort' && $(this).val() ) {
-                    get.push('sort=' + $(this).val());
-                    get.push('type=' + $(this).find('option:selected').data('type'));
-                }
-            });
-            // Create link
-            if( get.length ) {
-                get = get.join('&');
-                uri += '?' + get;
-            }
-            // Relocate
-            window.location.href = uri;
+        $('.products-filter input').on('change', function(){
+            $(this).closest('form').submit();
         });
     });
 </script>

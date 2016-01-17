@@ -63,14 +63,14 @@
         // Checkout your order
         public function checkoutAction(){
             // Check incomming data
-            $payment = Arr::get( $this->post, 'payment' );
-            if( !$payment ) {
-                $this->error('Выберите способ оплаты!');
-            }
-            $delivery = Arr::get( $this->post, 'delivery' );
-            if( !$delivery ) {
-                $this->error('Выберите способ доставки!');
-            }
+//            $payment = Arr::get( $this->post, 'payment' );
+//            if( !$payment ) {
+//                $this->error('Выберите способ оплаты!');
+//            }
+//            $delivery = Arr::get( $this->post, 'delivery' );
+//            if( !$delivery ) {
+//                $this->error('Выберите способ доставки!');
+//            }
             $name = Arr::get( $this->post, 'name' );
             if( !$name OR mb_strlen($name, 'UTF-8') < 2 ) {
                 $this->error('Укажите ФИО получателя!');
@@ -79,7 +79,10 @@
             if( !$phone OR !preg_match('/^\+38 \(\d{3}\) \d{3}\-\d{2}\-\d{2}$/', $phone, $matches) ) {
                 $this->error('Номер телефона введен неверно!');
             }
-
+            $email = trim(Arr::get($this->post, 'email'));
+            if( !$email OR !filter_var( $email, FILTER_VALIDATE_EMAIL ) ) {
+                $this->error('Вы неверно ввели E-Mail!');
+            }
             // Check for bot
             $ip = System::getRealIP();
     //            $check = DB::select(array(DB::expr('COUNT(orders.id)'), 'count'))
@@ -101,10 +104,9 @@
             $data = array();
             $data['status'] = 0;
             $data['ip'] = $ip;
-            $data['payment'] = $payment;
-            $data['delivery'] = $delivery;
             $data['name'] = $name;
             $data['phone'] = $phone;
+            $data['email'] = $email;
             $data['created_at'] = time();
             if( User::info() ) {
                 $data['user_id'] = User::info()->id;
@@ -155,10 +157,10 @@
             // Send message to admin if need
             $mail = DB::select()->from('mail_templates')->where('id', '=', 11)->where('status', '=', 1)->as_object()->execute()->current();
             if( $mail ) {
-                $from = array( '{{site}}', '{{ip}}', '{{date}}', '{{name}}', '{{phone}}', '{{payment}}', '{{delivery}}', '{{link_admin}}', '{{link_user}}', '{{items}}' );
+                $from = array( '{{site}}', '{{ip}}', '{{date}}', '{{name}}', '{{phone}}', '{{email}}', '{{link_admin}}', '{{items}}' );
                 $to = array(
                     Arr::get( $_SERVER, 'HTTP_HOST' ), $ip, date('d.m.Y H:i'),
-                    $name, $phone, $p[$payment], $d[$delivery], $link_admin, $link_user,
+                    $name, $phone, $email, $link_admin,
                     View::tpl(array('cart' => $cart), 'Cart/ItemsMail'),
                 );
                 $subject = str_replace($from, $to, $mail->subject);
@@ -167,18 +169,19 @@
             }
 
             // Send message to user if need and logged in
-            if( User::info() AND User::info()->email ) {
+            $email = (User::info() AND User::info()->email) ? User::info()->email : $email;
+            if( $email ) {
                 $mail = DB::select()->from('mail_templates')->where('id', '=', 12)->where('status', '=', 1)->as_object()->execute()->current();
                 if( $mail ) {
-                    $from = array( '{{site}}', '{{ip}}', '{{date}}', '{{name}}', '{{phone}}', '{{payment}}', '{{delivery}}', '{{link_admin}}', '{{link_user}}', '{{items}}' );
+                    $from = array( '{{site}}', '{{ip}}', '{{date}}', '{{name}}', '{{phone}}', '{{email}}', '{{link_admin}}', '{{items}}' );
                     $to = array(
                         Arr::get( $_SERVER, 'HTTP_HOST' ), $ip, date('d.m.Y H:i'),
-                        $name, $phone, $p[$payment], $d[$delivery] . ($delivery == 2 ? ', ' . $number : ''), $link_admin, $link_user,
+                        $name, $phone, $email, $link_admin,
                         View::tpl(array('cart' => $cart), 'Cart/ItemsMail'),
                     );
                     $subject = str_replace($from, $to, $mail->subject);
                     $text = str_replace($from, $to, $mail->text);
-                    Email::send( $subject, $text, User::info()->email );
+                    Email::send( $subject, $text, $email );
                 }
             }
 

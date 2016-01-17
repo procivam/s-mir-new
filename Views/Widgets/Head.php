@@ -10,6 +10,7 @@
 <meta name="msapplication-tooltip" content="<?php echo isset($description) ? $description : NULL; ?>">
 <meta name="msapplication-TileColor" content="#b91d47">
 <meta name="msapplication-config" content="/browserconfig.xml">
+<link rel="shortcut icon" href="<?php echo HTML::media('pic/favicon.ico') ?>" type="image/x-icon">
 
 <?php $css = Minify_Core::factory('css')->minify($styles); ?>
 <?php foreach ($css as $file_style): ?>

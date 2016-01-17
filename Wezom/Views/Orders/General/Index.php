@@ -81,7 +81,7 @@
                                 <th class="hidden-ss">Номер заказа</th>
                                 <th>Имя</th>
                                 <th>Телефон</th>
-                                <th>Заказчик</th>
+                                <th>E-mail</th>
                                 <th>Количество</th>
                                 <th>Сумма</th>
                                 <th>Дата</th>
@@ -97,16 +97,7 @@
                                     <td><?php echo $obj->name; ?></td>
                                     <td><a href="tel:<?php echo $obj->phone; ?>"><?php echo $obj->phone; ?></a></td>
                                     <td>
-                                        <?php if($obj->user_id): ?>
-                                            <?php $user = \Core\Common::factory('users')->getRow($obj->user_id); ?>
-                                            <?php if($user): ?>
-                                                <a href="<?php echo \Core\HTML::link('wezom/users/edit/'.$user->id); ?>" target="_blank"><?php echo $user->last_name.' '.$user->name; ?></a>
-                                            <?php else: ?>
-                                                <span style="font-style: italic; color: #ccc;">( Удален )</span>
-                                            <?php endif; ?>
-                                        <?php else: ?>
-                                            <span style="font-style: italic; color: #ccc;">( Администратор )</span>
-                                        <?php endif; ?>
+                                        <?php echo $obj->email ?>
                                     </td>
                                     <td><?php echo (int) $obj->count; ?> товаров</td>
                                     <td class="sum-column"><?php echo (int) $obj->amount; ?> грн</td>

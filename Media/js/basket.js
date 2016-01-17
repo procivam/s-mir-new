@@ -61,7 +61,7 @@ $(document).ready(function() {
                             $('#topCartCount').text(data.count);
                         }
                         if($('#cartContentPart').length && parseInt( data.count ) == 0) {
-                            $('#cartContentPart').html('<p class="emptyCartBlock">Ваша корзина пуста. <a href="/catalog">Начните делать покупки прямо сейчас!</a></p>');
+                            $('#cartContentPart').html('<p class="emptyCartBlock">Ваша корзина пуста. <a href="/products">Начните делать покупки прямо сейчас!</a></p>');
                         }
                     }
                 }
@@ -78,17 +78,6 @@ $(document).ready(function() {
 
         // ajax
 
-        /*$.ajax({
-            type: 'POST',
-            url: '/ajax/*****.php',
-            data: ({}),
-            success: function(data) {
-
-                php - пишем в базу
-
-                wb_a = true;
-            }
-        });*/
 
         $.ajax({
             url: '/ajax/editCartCountItems',
@@ -155,8 +144,8 @@ $(document).ready(function() {
                 wb_t.find('.wb_amount input').val(reObj.attr('data-count'));
             }
             // переписываем цену за единицу - если есть
-            if (wb_t.find('.wb_price_one span')) {
-                wb_t.find('.wb_price_one span').text(reObj.attr('data-price'));
+            if (wb_t.find('.wb_price_one span.price')) {
+                wb_t.find('.wb_price_one span.price').text(reObj.attr('data-price'));
             }
             // переписываем цену общую за количество товара - если есть
             if (wb_t.find('.wb_price_totl span')) {
@@ -188,7 +177,8 @@ $(document).ready(function() {
                 wb_p += wb_mult($(e));
             });
             // переписываем итоговую цену
-            $(el).find('.wb_total span').text(wb_p.toFixed(wb_x));
+            $(el).find('.wb_total span.price').text(wb_p.toFixed(wb_x));
+            $('#topCartAmount').text(wb_p.toFixed(wb_x));
         });
     }
 
@@ -219,7 +209,7 @@ $(document).ready(function() {
     });
 
     //контролы спиннера
-    $('.wBasket').on('click', '.wb_amount span', function(event) {
+    $('.wBasket').on('click', '.wb_amount img', function(event) {
         // если сейчас не идет предыдущий запрос
         if (wb_a) {
             wb_i = $(this).parent().children('input'); //определяем нужный инпут
@@ -318,7 +308,7 @@ $(document).ready(function() {
     });
 
     //удаление товара
-    $('.wBasket').on('click', '.wb_content .wb_del', function(event) {
+    $('.wBasket').on('click', '.wb_del', function(event) {
         wb_l = $(this).closest('li');
         wbf_ajax(wb_l, true);
     });

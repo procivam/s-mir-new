@@ -49,6 +49,11 @@
                 unset($filter['available']);
             }
 
+//            Custom filter by brand alias
+            if ($brand = Arr::get($_GET, 'brand')) {
+                $result->where('catalog.brand_alias', '=', $brand);
+            }
+
             if(is_array($filter) && count($filter)) {
                 $result
                     ->select(DB::expr('COUNT(DISTINCT catalog_specifications_values.specification_alias) AS cList'))
@@ -66,6 +71,7 @@
                 $result->and_where_close();
                 $result->having('cList', '=', count($filter));
             }
+
             $result = $result->group_by('catalog.id')
                 ->order_by('catalog.available', 'ASC')
                 ->order_by('catalog.'.$sort, $type)

@@ -162,11 +162,12 @@
                 $this->error(array(
                     'msg' => 'Укажите имя!',
                 ));
-            }if(!Arr::get($post, 'last_name')) {
-                $this->error(array(
-                    'msg' => 'Укажите фамилию!',
-                ));
             }
+//            if(!Arr::get($post, 'last_name')) {
+//                $this->error(array(
+//                    'msg' => 'Укажите фамилию!',
+//                ));
+//            }
             if(!Arr::get($post, 'email')) {
                 $this->error(array(
                     'msg' => 'Укажите E-Mail!',

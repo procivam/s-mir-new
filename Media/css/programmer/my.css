@@ -253,6 +253,26 @@ ul.product-list {
     display: inline-block;
 }
 
+/*******  filter  ********/
+.sort2 {
+    width: 45px;
+}
+.products-filter input[type="radio"] {
+    display: none;
+}
+.products-filter label {
+    cursor: pointer;
+}
+.products-filter .pagesort label {
+    padding: 5px 0 0 0px;
+    display: inline-block;
+    font: 100 12px Arial;
+    color: #3163ad;
+}
+.products-filter .pagesort .active label,
+.products-filter .pagesort li:hover label {
+    color: #ffffff;
+}
 /*******  pager  ********/
 .pagination {
     text-align: center;
@@ -289,6 +309,18 @@ ul.sitemap a {
 }
 ul.sitemap a:hover {
     text-decoration: underline;
+}
+
+/*******   cart   *******/
+a.wbLeave {
+    text-decoration: none;
+}
+.wb_del {
+    cursor: pointer;
+    position: absolute;
+    top: -22px;
+    right: 3px;
+    font-size: 18px;
 }
 
 /*******  footer  *******/

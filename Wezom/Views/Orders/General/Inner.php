@@ -27,8 +27,8 @@
 		</div>
 	</div>
 </div>
-<div class="rowSection column-2">
-	<div class="col-md-7">
+<div class="rowSection">
+	<div class="col-md-12">
 		<div class="widget">
 			<div class="widgetHeader"><div class="widgetTitle"><i class="fa-credit-card"></i>Заказ <span class="label label-primary">№ <?php echo $obj->id; ?></span> <a href="/wezom/<?php echo Core\Route::controller(); ?>/print/<?php echo $obj->id; ?>" target="_blank">Распечатать</a></div></div>
 			<div class="widgetContent">
@@ -60,21 +60,9 @@
                     <div class="widgetContent" data-ajax="orders/orderUser">
                         <form class="form-vertical row-border">
                             <div class="form-group">
-                                <label class="control-label col-md-2">Фамилия</label>
-                                <div class="col-md-10">
-                                    <input class="form-control" name="last_name" value="<?php echo $obj->last_name; ?>" />
-                                </div>
-                            </div>
-                            <div class="form-group">
                                 <label class="control-label col-md-2">Имя</label>
                                 <div class="col-md-10">
                                     <input class="form-control" name="name" value="<?php echo $obj->name; ?>" />
-                                </div>
-                            </div>
-                            <div class="form-group">
-                                <label class="control-label col-md-2">Отчество</label>
-                                <div class="col-md-10">
-                                    <input class="form-control" name="middle_name" value="<?php echo $obj->middle_name; ?>" />
                                 </div>
                             </div>
                             <div class="form-group">
@@ -98,7 +86,7 @@
 			</div>
 		</div>
 	</div>
-	<div class="col-md-5">
+	<div class="col-md-12">
 		<?php if( $user->id ): ?>
 			<div class="widget">
 				<div class="widgetHeader">
@@ -156,52 +144,52 @@
 			</div>
 		<?php endif; ?>
 
-        <div class="widget box">
-            <div class="widgetHeader"><div class="widgetTitle"><i class="fa-clock-o"></i>Доставка</div></div>
-            <div class="widgetContent" style="padding-top: 0;" data-ajax="orders/orderDelivery">
-                <div class="rowSection">
-                    <div class="table-footer clearFix">
-                        <div class="col-md-12">
-                            <div class="input-group">
-                                <select class="form-control" name="delivery">
-                                    <?php foreach( $delivery as $id => $name ): ?>
-                                        <option value="<?php echo $id; ?>" <?php echo $obj->delivery == $id ? 'selected' : ''; ?>><?php echo $name; ?></option>
-                                    <?php endforeach; ?>
-                                </select>
-                                <span class="input-group-btn">
-                                    <div class="col-md-12">
-                                        <button class="btn btn-primary" type="button">Обновить</button>
-                                    </div>
-                                </span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="widget box">
-            <div class="widgetHeader"><div class="widgetTitle"><i class="fa-clock-o"></i>Оплата</div></div>
-            <div class="widgetContent" style="padding-top: 0;" data-ajax="orders/orderPayment">
-                <div class="rowSection">
-                    <div class="table-footer clearFix">
-                        <div class="col-md-12">
-                            <div class="input-group">
-                                <select class="form-control" name="payment">
-                                    <?php foreach( $payment as $id => $name ): ?>
-                                        <option value="<?php echo $id; ?>" <?php echo $obj->payment == $id ? 'selected' : ''; ?>><?php echo $name; ?></option>
-                                    <?php endforeach; ?>
-                                </select>
-                                <span class="input-group-btn">
-                                    <div class="col-md-12">
-                                        <button class="btn btn-primary" type="button">Обновить</button>
-                                    </div>
-                                </span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
+<!--        <div class="widget box">-->
+<!--            <div class="widgetHeader"><div class="widgetTitle"><i class="fa-clock-o"></i>Доставка</div></div>-->
+<!--            <div class="widgetContent" style="padding-top: 0;" data-ajax="orders/orderDelivery">-->
+<!--                <div class="rowSection">-->
+<!--                    <div class="table-footer clearFix">-->
+<!--                        <div class="col-md-12">-->
+<!--                            <div class="input-group">-->
+<!--                                <select class="form-control" name="delivery">-->
+<!--                                    --><?php //foreach( $delivery as $id => $name ): ?>
+<!--                                        <option value="--><?php //echo $id; ?><!--" --><?php //echo $obj->delivery == $id ? 'selected' : ''; ?><!-- >--><?php //echo $name; ?><!--</option>-->
+<!--                                    --><?php //endforeach; ?>
+<!--                                </select>-->
+<!--                                <span class="input-group-btn">-->
+<!--                                    <div class="col-md-12">-->
+<!--                                        <button class="btn btn-primary" type="button">Обновить</button>-->
+<!--                                    </div>-->
+<!--                                </span>-->
+<!--                            </div>-->
+<!--                        </div>-->
+<!--                    </div>-->
+<!--                </div>-->
+<!--            </div>-->
+<!--        </div>-->
+<!--        <div class="widget box">-->
+<!--            <div class="widgetHeader"><div class="widgetTitle"><i class="fa-clock-o"></i>Оплата</div></div>-->
+<!--            <div class="widgetContent" style="padding-top: 0;" data-ajax="orders/orderPayment">-->
+<!--                <div class="rowSection">-->
+<!--                    <div class="table-footer clearFix">-->
+<!--                        <div class="col-md-12">-->
+<!--                            <div class="input-group">-->
+<!--                                <select class="form-control" name="payment">-->
+<!--                                    --><?php //foreach( $payment as $id => $name ): ?>
+<!--                                        <option value="--><?php //echo $id; ?><!--" --><?php //echo $obj->payment == $id ? 'selected' : ''; ?><!-- >--><?php //echo $name; ?><!--</option>-->
+<!--                                    --><?php //endforeach; ?>
+<!--                                </select>-->
+<!--                                <span class="input-group-btn">-->
+<!--                                    <div class="col-md-12">-->
+<!--                                        <button class="btn btn-primary" type="button">Обновить</button>-->
+<!--                                    </div>-->
+<!--                                </span>-->
+<!--                            </div>-->
+<!--                        </div>-->
+<!--                    </div>-->
+<!--                </div>-->
+<!--            </div>-->
+<!--        </div>-->
 	</div>
 </div>
 <div class="rowSection">

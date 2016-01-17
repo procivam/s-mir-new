@@ -319,6 +319,10 @@ $(function(){
                     setTopCartCount(count);
                 }
                 $('.wb_edit_init').click();
+                // Add notification
+                if ( data.response ) {
+                    generate(data.response, 'success', 3500);
+                }
             }
         });
     });

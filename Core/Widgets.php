@@ -351,7 +351,7 @@
                 HTML::media('js/basket.js'),
                 HTML::media('js/plugins.js'),
                 HTML::media('js/parsley.js'),
-                HTML::media('js/jquery.notification.js'),
+//                HTML::media('js/jquery.notification.js'),
 //                HTML::media('js/jqueryCarus.js'),
                 HTML::media('js/custom.js'),
                 HTML::media('js/init.js'),

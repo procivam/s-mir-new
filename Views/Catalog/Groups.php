@@ -1,5 +1,3 @@
-<?php echo Core\Widgets::get('CatalogSort', array('category' => $category, 'brands' => $brands)); ?>
-
 <ul class="cat_ul">
     <?php foreach( $result as $obj ): ?>
         <li>

@@ -31,7 +31,7 @@
             <a href="<?php echo Core\HTML::link('cart'); ?>">
                 <img src="<?php echo Core\HTML::media('pic/shopping-cart-cart.png'); ?>">
                 <span class="cart-text">Ваша корзина</span>
-                <p><span class="amount"><?php echo $countItemsInTheCart; ?></span> шт. - <span class="price"><?php echo $totalCartAmount; ?></span>грн.</p>
+                <p><span class="amount" id="topCartCount"><?php echo $countItemsInTheCart; ?></span> шт. - <span class="price" id="topCartAmount"><?php echo $totalCartAmount; ?></span>грн.</p>
             </a>
         </div>
         <div class="clearfix"></div>

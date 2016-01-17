@@ -1,3 +1,4 @@
+<?php echo Core\Widgets::get('CatalogSort', array('category' => $category, 'brands' => $brands)); ?>
 <?php if( !count($result) ): ?>
     <p>По заданым параметрам товаров нет</p>
 <?php else: ?>

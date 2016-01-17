@@ -1,26 +1,43 @@
 <!DOCTYPE html>
 <html lang="ru-ru" dir="ltr">
 <!-- (c) студия Wezom | www.wezom.com.ua -->
-<head>	
+<head>
 	<?php echo Core\Widgets::get('Head', $_seo); ?>
-    <?php foreach ( $_seo['scripts']['head'] as $script ): ?>
-        <?php echo $script; ?>
-    <?php endforeach ?>
-    <?php echo $GLOBAL_MESSAGE; ?>
+	<?php foreach ( $_seo['scripts']['head'] as $script ): ?>
+		<?php echo $script; ?>
+	<?php endforeach ?>
+	<?php echo $GLOBAL_MESSAGE; ?>
 </head>
-<body>
-    <?php foreach ( $_seo['scripts']['body'] as $script ): ?>
-        <?php echo $script; ?>
-    <?php endforeach ?>
-	<div class="wWrapper basket_page">
-		<?php echo Core\Widgets::get('HeaderCart'); ?>
-		<div class="wConteiner">
-			<div class="wSize" id="cartContentPart">
-				<?php echo $_content; ?>
+<body class="inerfon">
+<div class="main shoppingCart">
+	<?php foreach ( $_seo['scripts']['body'] as $script ): ?>
+		<?php echo $script; ?>
+	<?php endforeach ?>
+	<?php if (trim(strip_tags(Core\Arr::get($_seo, 'seo_text')))): ?>
+		<div class="seoTxt" id="seoTxt">
+			<div class="wrapper wTxt">
+				<?php echo Core\Arr::get($_seo, 'seo_text'); ?>
 			</div>
 		</div>
+	<?php endif ?>
+
+	<?php echo Core\Widgets::get('Header', array('config' => $_config)); ?>
+
+	<div class="content clearfix">
+		<div class="wrapper">
+			<div class="alpfainer">
+				<h1><?php echo Core\Arr::get($_seo, 'h1'); ?></h1>
+				<?php echo $_breadcrumbs; ?>
+				<?php echo Core\Widgets::get('CartForm') ?>
+			</div>
+			<img src="<?php echo Core\HTML::media('pic/alphaline1-vertical.jpg')?>" class="divider">
+
+			<?php echo $_content; ?>
+
+			<div id="clonSeo" style="margin-top: 20px;"></div>
+		</div>
 	</div>
-	<?php echo Core\Widgets::get('HiddenData'); ?>
-    <?php echo Core\Widgets::get('Footer', array('counters' => Core\Arr::get($_seo, 'counters'), 'config' => $_config)); ?>
+	<?php echo Core\Widgets::get('Footer', array('counters' => Core\Arr::get($_seo, 'scripts')['counter'], 'config' => $_config)); ?>
+</div>
 </body>
 </html>

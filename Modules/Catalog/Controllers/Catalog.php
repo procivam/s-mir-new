@@ -35,7 +35,7 @@
             $this->page = !(int) Route::param('page') ? 1 : (int) Route::param('page');
             $limit = Config::get('basic.limit_groups');
             $sort = 'sort'; $type = 'ASC';
-            $this->limit = (int) Arr::get($_GET, 'per_page') ? (int) Arr::get($_GET, 'per_page') : $limit;
+            $this->limit = (int) Arr::get($_GET, 'at-page') ? (int) Arr::get($_GET, 'at-page') : $limit;
             $this->offset = ($this->page - 1) * $this->limit;
             $this->sort = in_array(Arr::get($_GET, 'sort'), array('name', 'created_at', 'cost')) ? Arr::get($_GET, 'sort') : $sort;
             $this->type = in_array(strtolower(Arr::get($_GET, 'type')), array('asc', 'desc')) ? strtoupper(Arr::get($_GET, 'type')) : $type;
@@ -53,8 +53,6 @@
             $this->_seo['keywords'] = $this->current->keywords;
             $this->_seo['description'] = $this->current->description;
             $this->_seo['seo_text'] = $this->current->text;
-            //            Brands
-            $brands = Brands::getRows(1);
             // Get groups with parent_id = 0
             $result = Model::getInnerGroups(0, $this->sort, $this->type, $this->limit, $this->offset);
             // Count of parent groups
@@ -62,7 +60,7 @@
             // Generate pagination
             $pager = Pager::factory($this->page, $count, $this->limit)->create();
             // Render template
-            $this->_content = View::tpl( array('result' => $result, 'pager' => $pager, 'group' => null, 'brands' => $brands),
+            $this->_content = View::tpl( array('result' => $result, 'pager' => $pager),
                 'Catalog/Groups' );
         }
 
@@ -81,8 +79,6 @@
             if (!$count) {
                 return $this->listAction();
             }
-//            Brands
-            $brands = Brands::getRows(1);
             // Seo
             $this->setSeoForGroup($group);
             // Add plus one to views
@@ -92,7 +88,7 @@
             // Generate pagination
             $pager = Pager::factory($this->page, $count, $this->limit)->create();
             // Render template
-            $this->_content = View::tpl( array('result' => $result, 'pager' => $pager, 'group' => $group, 'brands' => $brands), 'Catalog/Groups' );
+            $this->_content = View::tpl( array('result' => $result, 'pager' => $pager), 'Catalog/Groups' );
         }
 
 
@@ -101,6 +97,9 @@
             if( Config::get('error') ) {
                 return false;
             }
+            $this->limit = Config::get('basic.limit');
+            $this->offset = ($this->page - 1) * $this->limit;
+
             Route::factory()->setAction('list');
             // Filter parameters to array if need
             Filter::setFilterParameters();
@@ -109,16 +108,41 @@
             // Check for existance
             $group = Model::getRow(Route::param('alias'), 'alias', 1);
             if( !$group ) { return Config::error(); }
+//            Brands
+            $brands = Brands::getRows(1);
             // Seo
             $this->setSeoForGroup($group);
             // Add plus one to views
             Model::addView($group);
+//            Custom sort
+            if (Arr::get($_GET, 'sort') && in_array($_GET['sort'], array('price-asc', 'price-desc', 'name-asc', 'name-desc'))) {
+                switch($_GET['sort']) {
+                    case 'price-asc':
+                        $this->sort = 'cost';
+                        $this->type = 'ASC';
+                        break;
+                    case 'price-desc':
+                        $this->sort = 'cost';
+                        $this->type = 'DESC';
+                        break;
+                    case 'name-asc':
+                        $this->sort = 'name';
+                        $this->type = 'ASC';
+                        break;
+                    case 'name-desc':
+                        $this->sort = 'name';
+                        $this->type = 'DESC';
+                        break;
+                }
+            }
+
             // Get items list
             $result = Filter::getFilteredItemsList($this->limit, $this->offset, $this->sort, $this->type);
             // Generate pagination
             $pager = Pager::factory($this->page, $result['total'], $this->limit)->create();
             // Render page
-            $this->_content = View::tpl( array('result' => $result['items'], 'pager' => $pager), 'Catalog/ItemsList' );
+            $this->_content = View::tpl( array('result' => $result['items'], 'pager' => $pager, 'brands' => $brands),
+                'Catalog/ItemsList' );
         }
 
 

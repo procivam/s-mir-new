@@ -197,21 +197,25 @@
                         <div class="col-md-6">{{phone}}</div>
                     </div>
                     <div class="rowSection">
-                        <div class="col-md-6"><strong>Способ оплаты</strong></div>
-                        <div class="col-md-6">{{payment}}</div>
+                        <div class="col-md-6"><strong>E-mail</strong></div>
+                        <div class="col-md-6">{{email}}</div>
                     </div>
-                    <div class="rowSection">
-                        <div class="col-md-6"><strong>Способ доставки (с номером склада, если нужно)</strong></div>
-                        <div class="col-md-6">{{delivery}}</div>
-                    </div>
+<!--                    <div class="rowSection">-->
+<!--                        <div class="col-md-6"><strong>Способ оплаты</strong></div>-->
+<!--                        <div class="col-md-6">{{payment}}</div>-->
+<!--                    </div>-->
+<!--                    <div class="rowSection">-->
+<!--                        <div class="col-md-6"><strong>Способ доставки (с номером склада, если нужно)</strong></div>-->
+<!--                        <div class="col-md-6">{{delivery}}</div>-->
+<!--                    </div>-->
                     <div class="rowSection">
                         <div class="col-md-6"><strong>Список заказаных товаров</strong></div>
                         <div class="col-md-6">{{items}}</div>
                     </div>
-                    <div class="rowSection">
-                        <div class="col-md-6"><strong>Ссылка на заказ в кабинете пользователя</strong></div>
-                        <div class="col-md-6">{{link_user}}</div>
-                    </div>
+<!--                    <div class="rowSection">-->
+<!--                        <div class="col-md-6"><strong>Ссылка на заказ в кабинете пользователя</strong></div>-->
+<!--                        <div class="col-md-6">{{link_user}}</div>-->
+<!--                    </div>-->
                     <div class="rowSection">
                         <div class="col-md-6"><strong>Ссылка на заказ в админ-панели</strong></div>
                         <div class="col-md-6">{{link_admin}}</div>

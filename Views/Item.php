@@ -8,7 +8,7 @@
     <?php endforeach ?>
     <?php echo $GLOBAL_MESSAGE; ?>
 </head>
-<body>
+<body class="inerfon">
     <?php foreach ( $_seo['scripts']['body'] as $script ): ?>
         <?php echo $script; ?>
     <?php endforeach ?>
