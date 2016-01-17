@@ -12,6 +12,18 @@
 <meta name="msapplication-config" content="/browserconfig.xml">
 <link rel="shortcut icon" href="<?php echo HTML::media('pic/favicon.ico') ?>" type="image/x-icon">
 
+<!-- SEO canonicals -->
+<?php if ($canonical = Core\Config::get('canonical')): ?>
+    <link rel="canonical" href="<?php echo $canonical ?>">
+<?php endif; ?>
+<?php if ($prev = Core\Config::get('prev')): ?>
+    <link rel="prev" href="<?php echo $prev ?>">
+<?php endif; ?>
+<?php if ($next = Core\Config::get('next')): ?>
+    <link rel="next" href="<?php echo $next ?>">
+<?php endif; ?>
+<!-- .SEO canonicals -->
+
 <?php $css = Minify_Core::factory('css')->minify($styles); ?>
 <?php foreach ($css as $file_style): ?>
     <?php echo HTML::style($file_style) . "\n"; ?>

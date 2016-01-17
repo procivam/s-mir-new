@@ -4,7 +4,7 @@
         <?php foreach($result as $obj): ?>
             <td class="mainnews1">
                 <p class="mainnewsnazv">
-                    <a href="<?php echo Core\HTML::link('news/'.$obj->alias); ?>"><?php echo $obj->name; ?></a>
+                    <a href="<?php echo Core\HTML::link('news/'.$obj->alias, true); ?>"><?php echo $obj->name; ?></a>
                 </p>
                 <div class="wTxt"><?php echo Core\Text::limit_words(strip_tags($obj->text), 50, '...'); ?></div>
             </td>
@@ -12,7 +12,7 @@
     </tr>
     <tr>
         <td>
-            <p class="mainnew-readmore">Полезно почитать <a href="<?php echo Core\HTML::link('news'); ?>">Читать все</a></p>
+            <p class="mainnew-readmore">Полезно почитать <a href="<?php echo Core\HTML::link('news', true); ?>">Читать все</a></p>
         </td>
     </tr>
     <tr>

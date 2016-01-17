@@ -39,6 +39,16 @@
             $this->offset = ($this->page - 1) * $this->limit;
             $this->sort = in_array(Arr::get($_GET, 'sort'), array('name', 'created_at', 'cost')) ? Arr::get($_GET, 'sort') : $sort;
             $this->type = in_array(strtolower(Arr::get($_GET, 'type')), array('asc', 'desc')) ? strtoupper(Arr::get($_GET, 'type')) : $type;
+
+//            Seo links
+            if ($this->page != 1) {
+                Config::set('canonical', HTML::link('products'.(Route::param('action') ? '/'.Route::param('action') : null), true));
+                if ($this->page == 2) {
+                    Config::set('prev', HTML::link('products'.(Route::param('action') ? '/'.Route::param('action') : null), true));
+                } elseif ($this->page > 2) {
+                    Config::set('prev', HTML::link('products'.(Route::param('action') ? '/'.Route::param('action') : null).'/page/'.($this->page - 1), true));
+                }
+            }
         }
 
 
@@ -57,6 +67,9 @@
             $result = Model::getInnerGroups(0, $this->sort, $this->type, $this->limit, $this->offset);
             // Count of parent groups
             $count = Model::countInnerGroups(0);
+            if (ceil($count / $this->limit) > $this->page) {
+                Config::set('next', HTML::link('products/page/'.($this->page + 1), true));
+            }
             // Generate pagination
             $pager = Pager::factory($this->page, $count, $this->limit)->create();
             // Render template
@@ -80,6 +93,9 @@
                 return $this->listAction();
             }
             // Seo
+            if (ceil($count / $this->limit) > $this->page) {
+                Config::set('next', HTML::link('products/'.Route::param('alias').'/page/'.($this->page + 1), true));
+            }
             $this->setSeoForGroup($group);
             // Add plus one to views
             Model::addView($group);
@@ -138,6 +154,12 @@
 
             // Get items list
             $result = Filter::getFilteredItemsList($this->limit, $this->offset, $this->sort, $this->type);
+            if (ceil($result['total'] / $this->limit) > $this->page) {
+                Config::set('next', HTML::link('products/'.Route::param('alias').'/page/'.($this->page + 1), true));
+            }
+            if (isset($_GET['brand']) OR isset($_GET['sort']) OR isset($_GET['at-page'])) {
+                Config::set('canonical', HTML::link('products/'.Route::param('alias'), true));
+            }
             // Generate pagination
             $pager = Pager::factory($this->page, $result['total'], $this->limit)->create();
             // Render page
@@ -169,12 +191,11 @@
 
             $this->_seo['h1'] = str_replace($from, $to, $h1);
             $this->_seo['title'] = str_replace($from, $to, $title)
-                .((Arr::get($_GET, 'sort') == 'cost' && Arr::get($_GET, 'type') == 'asc') ? ', От бютжетных к дорогим' : '')
-                .((Arr::get($_GET, 'sort') == 'cost' && Arr::get($_GET, 'type') == 'desc') ? ', От дорогих к бютжетным' : '')
-                .((Arr::get($_GET, 'sort') == 'created_at' && Arr::get($_GET, 'type') == 'desc') ? ', От новых моделей к старым' : '')
-                .((Arr::get($_GET, 'sort') == 'created_at' && Arr::get($_GET, 'type') == 'asc') ? ', От старых моделей к новым' : '')
-                .((Arr::get($_GET, 'sort') == 'name' && Arr::get($_GET, 'type') == 'asc') ? ', По названию от А до Я' : '')
-                .((Arr::get($_GET, 'sort') == 'name' && Arr::get($_GET, 'type') == 'desc') ? ', По названию от Я до А' : '')
+                .(Arr::get($_GET, 'sort') == 'price-asc' ? ', От бютжетных к дорогим' : '')
+                .(Arr::get($_GET, 'sort') == 'price-desc' ? ', От дорогих к бютжетным' : '')
+                .(Arr::get($_GET, 'sort') == 'name-asc' ? ', По названию от А до Я' : '')
+                .(Arr::get($_GET, 'sort') == 'name-desc' ? ', По названию от Я до А' : '')
+                .(Arr::get($_GET, 'at-page') ? ', На странице '.Arr::get($_GET, 'at-page') : '')
                 .(Arr::get($_GET, 'page', 1) > 1 ? ', Страница '.Arr::get($_GET, 'page', 1) : '');;
             $this->_seo['keywords'] = str_replace($from, $to, $keywords);
             $this->_seo['description'] = str_replace($from, $to, $description);

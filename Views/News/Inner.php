@@ -6,6 +6,6 @@
     <?php endif; ?>
     <div class="wTxt">
         <?php echo $obj->text; ?>
-        <a href="<?php echo Core\HTML::link('news'); ?>" class="back_to_news"><span>вернуться к списку новостей</span></a>
+        <a href="<?php echo Core\HTML::link('news', true); ?>" class="back_to_news"><span>вернуться к списку новостей</span></a>
     </div>
 </div>

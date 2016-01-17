@@ -335,3 +335,12 @@ a.wbLeave {
     transition: 0.1s linear;
     background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABwAAAAKCAYAAACngj4SAAABEUlEQVQ4y43T30oCURAG8H2YkEi0cmkTKwxLUyQE0QtfrQfoNXqIopuuzJYk1/9m2Y19A7MwDLNn9+J3c/Y7Z/YMc7ynx4cBTOEFjsFL0YQQhnCTIe/DK0ygRwsR7NkXFByb7+BX5L+h5sifwkzkR7T4JhbiokfG5lsusFdo7crIF/lWMvtMHy6Ngz4hJzZXE4rFVlAR+Tz/uMws4TwO1IwDR3AAF7BR38bGgQsI4JC/6y7QxTzZggb8qOAHH6RbTjc44WHTRUOj2HVcR/e9BTtH6yI1yb7xQ9IW6rKGNVn3CUXnUDLyQULRHT8hL60g6cKfatWZY/xpYNaqWNvKuh5sn8f6HcoZHniVs7Snk5T7B7R+uUyYzswtAAAAAElFTkSuQmCC) no-repeat 0 50%;
 }
+.botom_inner {
+    position: relative;
+}
+.bottom .sitemap {
+    float: right;
+}
+.bottom .sitemap a {
+    color: #818181;
+}

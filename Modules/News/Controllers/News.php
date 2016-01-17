@@ -1,6 +1,7 @@
 <?php
     namespace Modules\News\Controllers;
 
+    use Core\HTML;
     use Core\Route;
     use Core\View;
     use Core\Config;
@@ -29,6 +30,20 @@
             $this->page = !(int) Route::param('page') ? 1 : (int) Route::param('page');
             $this->limit = (int) Config::get('basic.limit_articles');
             $this->offset = ($this->page - 1) * $this->limit;
+
+//            Seo links
+            if ($this->page != 1) {
+                Config::set('canonical', HTML::link('news', true));
+                if ($this->page == 2) {
+                    Config::set('prev', HTML::link('news', true));
+                } elseif ($this->page > 2) {
+                    Config::set('prev', HTML::link('news/page/'.($this->page - 1), true));
+                }
+            }
+            $count = Model::countRows(1);
+            if (ceil($count / $this->limit) > $this->page) {
+                Config::set('next', HTML::link('news/page/'.($this->page + 1), true));
+            }
         }
 
         public function indexAction() {
@@ -42,8 +57,6 @@
             $this->_seo['description'] = $this->current->description;
             $this->_seo['seo_text'] = $this->current->text;
 
-            Config::set( 'content_class', 'news_block' );
-            $page = !(int) Route::param('page') ? 1 : (int) Route::param('page');
             // Get Rows
             $result = Model::getRows(1, 'date', 'DESC', $this->limit, $this->offset);
             // Get full count of rows

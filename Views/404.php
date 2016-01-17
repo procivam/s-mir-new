@@ -30,8 +30,8 @@
                 <?php echo $_breadcrumbs; ?>
             </div>
             <div class="wTxt">
-                <p>Страница не найдена. Начните с <a href="<?php echo Core\HTML::link(); ?>">Главной страницы</a>.</p>
-                <a href="<?php echo Core\HTML::link('sitemap'); ?>">Карта сайта</a>
+                <p>Страница не найдена. Начните с <a href="<?php echo Core\HTML::link('', true); ?>">Главной страницы</a>.</p>
+                <a href="<?php echo Core\HTML::link('sitemap', true); ?>">Карта сайта</a>
             </div>
 
             <div id="clonSeo"></div>
